@@ -1,0 +1,13 @@
+# Python
+tools/epicure-mcp/.venv/
+tools/epicure-mcp/__pycache__/
+tools/epicure-mcp/src/**/__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
