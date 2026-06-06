@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Starts the epicure-mcp server on localhost:8080.
+# Run this before a Claude Code cooking session.
+set -e
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+VENV="$REPO_ROOT/tools/epicure-mcp/.venv"
+cd "$REPO_ROOT/tools/epicure-mcp"
+source "$VENV/bin/activate"
+exec python -m epicure_mcp.server
