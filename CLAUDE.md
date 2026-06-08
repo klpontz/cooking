@@ -72,6 +72,7 @@ Ingredient names must be lowercase and canonical (e.g., "guanciale", "parmesan",
 - `techniques/` — technique notes
 - `log/YYYY/` — session notes, experiments, outcomes
 - `wiki/` — HTML synthesis articles you maintain (see below)
+- `public/recipes/` — published recipe HTML pages, deployed via Vercel
 
 ## Wiki Maintenance
 
@@ -83,6 +84,17 @@ Articles:
 - `wiki/index.html` — catalog and navigation
 
 Keep articles tight. Update rather than append. The wiki is for synthesis, not raw notes — those go in `log/`.
+
+## Recipe Publishing
+
+When Kevin says any of the following, invoke the `/recipe` skill immediately — no confirmation:
+- "give me the final recipe"
+- "finalize the recipe"
+- "publish the recipe"
+- "save this recipe"
+- "drop the recipe"
+
+The skill generates a tagged HTML page, commits it to `public/recipes/`, pushes to main, and posts the Vercel URL in the thread.
 
 ## Advisory Rules
 
