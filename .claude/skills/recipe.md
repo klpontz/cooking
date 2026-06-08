@@ -5,7 +5,7 @@ Publish the current recipe from conversation context as a self-contained HTML pa
 ## Your Vercel base URL
 
 ```
-https://YOUR_VERCEL_URL.vercel.app
+https://cooking-green-mu.vercel.app
 ```
 
 ## Steps
@@ -34,7 +34,7 @@ https://YOUR_VERCEL_URL.vercel.app
 5. Post the URL in the conversation:
    ```
    Recipe published — live in ~60s:
-   https://YOUR_VERCEL_URL.vercel.app/public/recipes/{filename}
+   https://cooking-green-mu.vercel.app/public/recipes/{filename}
    ```
 
 ## HTML Template
