@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking Wiki</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.7; }
+    h1 { font-size: 1.8rem; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; color: #444; }
+    ul { padding-left: 1.2rem; }
+    li { margin: 0.5rem 0; }
+    a { color: #1a1a1a; }
+    a:hover { color: #555; }
+    .desc { font-size: 0.9rem; color: #666; margin-left: 0.5rem; }
+    footer { margin-top: 3rem; font-size: 0.8rem; color: #aaa; border-top: 1px solid #eee; padding-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Cooking Wiki</h1>
+  <p>LLM-compiled synthesis across sessions. Claude maintains these articles; you don't edit them directly. Raw notes go in <code>log/</code>.</p>
+
+  <h2>Articles</h2>
+  <ul>
+    <li>
+      <a href="flavor-patterns.html">Flavor Patterns</a>
+      <span class="desc">— Ingredient combos and techniques that keep working</span>
+    </li>
+    <li>
+      <a href="seasonal.html">Seasonal Notes</a>
+      <span class="desc">— What's in the garden, seasonal patterns</span>
+    </li>
+  </ul>
+
+  <h2>Repo Map</h2>
+  <ul>
+    <li><code>CLAUDE.md</code> — Advisor role and rules</li>
+    <li><code>meta/preferences.md</code> — Full cooking profile</li>
+    <li><code>meta/sources.md</code> — Trusted references</li>
+    <li><code>pantry/staples.md</code> — Pantry inventory</li>
+    <li><code>pantry/garden.md</code> — Fresh herbs and homegrown</li>
+    <li><code>recipes/</code> — Recipes worth keeping (YYYY-MM-DD-name.md)</li>
+    <li><code>techniques/</code> — Technique notes</li>
+    <li><code>log/YYYY/</code> — Session notes and experiments</li>
+  </ul>
+
+  <footer>Updated by Claude during cooking sessions.</footer>
+</body>
+</html>
