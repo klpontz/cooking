@@ -11,3 +11,6 @@ tools/epicure-mcp/src/**/__pycache__/
 # Editor
 .idea/
 .vscode/
+
+# Claude Code
+.claude/settings.local.json
