@@ -69,7 +69,6 @@ The HTML structure is intentionally minimal for v1. Template design is flagged f
 
 ## What Is Not In Scope
 
-- Email delivery (removed — URL posted in thread is sufficient)
 - Recipe index page (future work)
 - Build pipeline or static site generator (not needed)
 - Template system (future iteration)
