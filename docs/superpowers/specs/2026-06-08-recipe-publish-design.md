@@ -57,6 +57,38 @@ Slug: lowercase, hyphenated, date-prefixed — e.g., `2026-06-08-pasta-alla-gric
 
 HTML is generated from conversation context; no template file required.
 
+## Tagging System
+
+Each recipe page includes a metadata block for future indexing. Two forms — both written at publish time:
+
+**HTML meta tag** (machine-readable, in `<head>`):
+```html
+<meta name="recipe-tags" content="italian, pasta, weeknight">
+<meta name="recipe-cuisine" content="italian">
+<meta name="recipe-type" content="pasta, weeknight">
+<meta name="recipe-main-ingredient" content="guanciale">
+```
+
+**Comment block** (human-readable, top of file):
+```html
+<!--
+  recipe: Pasta alla Gricia
+  date: 2026-06-08
+  serves: 3
+  cuisine: italian
+  type: pasta, weeknight
+  main-ingredient: guanciale
+  tags: italian, pasta, weeknight, guanciale
+-->
+```
+
+**Tag categories:**
+- `cuisine` — italian, japanese, mexican, chinese, indian, thai
+- `type` — pasta, braise, weeknight, weekend, bread, pizza, soup, salad, fermentation
+- `main-ingredient` — free-form, one primary ingredient
+
+No UI or index built now. The metadata is there when indexing becomes useful.
+
 ## Template Iteration
 
 The HTML structure is intentionally minimal for v1. Template design is flagged for future iteration — easy to update since it's just HTML.
