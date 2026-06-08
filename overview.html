@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking — Personal Advisor System</title>
+  <style>
+    body { font-family: Georgia, serif; max-width: 760px; margin: 40px auto; padding: 0 24px; color: #1a1a1a; line-height: 1.75; }
+    h1 { font-size: 2rem; border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 0.5rem; }
+    .subtitle { color: #666; margin-top: 0; margin-bottom: 2rem; }
+    h2 { font-size: 1.25rem; margin-top: 2.5rem; border-left: 4px solid #1a1a1a; padding-left: 12px; }
+    h3 { font-size: 1rem; color: #444; margin-top: 1.5rem; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+    pre { background: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.85em; line-height: 1.5; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid #ddd; }
+    th { font-size: 0.85rem; color: #666; font-weight: normal; text-transform: uppercase; letter-spacing: 0.05em; }
+    ul { padding-left: 1.2rem; }
+    li { margin: 0.4rem 0; }
+    a { color: #1a1a1a; }
+    .note { background: #fffbea; border-left: 4px solid #f0c040; padding: 0.75rem 1rem; margin: 1.5rem 0; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Cooking</h1>
+  <p class="subtitle">A personal cooking advisor and recipe library. Persistent context, ingredient intelligence, and a structured place for everything worth keeping.</p>
+
+  <h2>Why This Exists</h2>
+
+  <p>Most recipe apps are optimized for discovery, not memory. They don't know you already make a great tonkatsu, that you have rosemary in the garden right now, that you hate anything that reads as "too French," or that it's Tuesday night and you have 40 minutes.</p>
+
+  <p>This system does. It holds your full cooking profile — preferences, pantry, trusted sources, past experiments — and reasons from it. The goal is an advisor that knows your kitchen as well as you do.</p>
+
+  <h2>What This Is</h2>
+
+  <p>Claude Code loads <code>CLAUDE.md</code> at session start. Combined with structured context files and the Epicure ingredient embedding model (wired in as a live MCP server), each session has:</p>
+
+  <ul>
+    <li>Your full cooking profile — household, style, cuisines, techniques, dislikes</li>
+    <li>Current pantry and garden state</li>
+    <li>Trusted technique sources (Kenji, Hazan, ATK, McFadden, Mallmann)</li>
+    <li>Ingredient intelligence — flavor neighbors, pairing scores, cultural affinities</li>
+    <li>A growing recipe library and log of past sessions</li>
+  </ul>
+
+  <h2>Repo Structure</h2>
+
+  <pre>cooking/
+├── CLAUDE.md                  # Advisor role + behavioral rules
+├── overview.html              # This file
+├── .claude/
+│   └── settings.json          # Epicure-mcp wired in as MCP server
+├── recipes/                   # Recipes worth keeping (YYYY-MM-DD-name.md)
+├── techniques/                # Technique notes — the "why it works" layer
+├── pantry/
+│   ├── staples.md             # Reliable pantry inventory
+│   └── garden.md             # Fresh herbs and homegrown
+├── log/YYYY/                  # Session notes, experiments, outcomes
+├── wiki/                      # HTML — LLM-compiled synthesis
+│   ├── index.html
+│   ├── flavor-patterns.html
+│   └── seasonal.html
+├── meta/
+│   ├── preferences.md        # Full cooking profile
+│   └── sources.md            # Trusted references
+└── tools/
+    └── epicure-mcp/           # Ingredient embedding MCP server</pre>
+
+  <table>
+    <tr><th>Directory</th><th>Format</th><th>Purpose</th></tr>
+    <tr><td><code>recipes/</code></td><td>Markdown</td><td>Storage you write into — captured after cooking</td></tr>
+    <tr><td><code>techniques/</code></td><td>Markdown</td><td>Technique notes from trusted sources</td></tr>
+    <tr><td><code>pantry/</code></td><td>Markdown</td><td>Current pantry and garden — informs substitution advice</td></tr>
+    <tr><td><code>log/</code></td><td>Markdown</td><td>Session notes and experiments — raw, quick to capture</td></tr>
+    <tr><td><code>wiki/</code></td><td>HTML</td><td>Compiled synthesis — meant for reading, not editing</td></tr>
+    <tr><td><code>meta/</code></td><td>Markdown</td><td>Advisor calibration — preferences and sources</td></tr>
+  </table>
+
+  <h2>Epicure Ingredient Intelligence</h2>
+
+  <p>The Epicure model embeds 1,790 ingredients as 300-dimensional vectors trained on 4.14M recipes. Claude has access to it as a live MCP server and uses it automatically — you don't invoke it manually.</p>
+
+  <table>
+    <tr><th>Tool</th><th>When Claude uses it</th></tr>
+    <tr><td><code>neighbors</code></td><td>Substitution questions — finds closest flavor neighbors</td></tr>
+    <tr><td><code>find_pairings</code></td><td>"What goes with X?" — cluster and bridge graph</td></tr>
+    <tr><td><code>pairing_score</code></td><td>Checking affinity between two specific ingredients</td></tr>
+    <tr><td><code>cultural_profile</code></td><td>Which cuisine an ingredient fits best</td></tr>
+    <tr><td><code>compare_on_axis</code></td><td>Comparing two ingredients on a named flavor axis</td></tr>
+    <tr><td><code>morph</code></td><td>Exploring a flavor direction from a starting ingredient</td></tr>
+  </table>
+
+  <div class="note">The epicure-mcp server must be running before a session. Run <code>bin/epicure</code> in a terminal, or install the launchd plist to auto-start it at login.</div>
+
+  <h2>How to Use It</h2>
+
+  <h3>Weeknight question</h3>
+  <p>Open a Claude Code session in <code>/cooking</code>. Ask something. The advisor knows your profile, your pantry, and your time constraints. It will give a specific recommendation — not "it depends."</p>
+
+  <h3>Saving a recipe</h3>
+  <p>Tell Claude to save it: "save this as a recipe." It creates <code>recipes/YYYY-MM-DD-name.md</code> with what you made, the source, and any notes.</p>
+
+  <h3>Logging a session</h3>
+  <p>After an experiment, log what happened: "log tonight — I made X, changed Y, result was Z." Claude writes it to <code>log/YYYY/MM-DD.md</code> and updates the wiki if there's a pattern worth noting.</p>
+
+  <h2>The Wiki Layer</h2>
+
+  <p>The <code>wiki/</code> directory is compiled synthesis — Claude maintains it, you don't write to it directly. Raw notes go in <code>log/</code>. The wiki is where patterns become visible: flavor combinations that keep working, seasonal observations, cross-cuisine moves that generalize.</p>
+
+  <p>It starts sparse and fills in over time. That's correct.</p>
+
+  <h2>Future: Public Docs</h2>
+
+  <p><code>overview.html</code> and <code>wiki/</code> are structured for static hosting. When ready: connect to Vercel, point at the root, done. No restructuring needed.</p>
+
+</body>
+</html>
