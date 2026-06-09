@@ -24,14 +24,20 @@ https://cooking-green-mu.vercel.app
 
 3. Write the file to `public/recipes/{filename}` using the HTML template below. Fill every placeholder with real content — never leave `{recipe_name}` or any other `{variable}` in the output.
 
-4. Run:
+4. Add a new `<li>` entry to the Recipes section of `index.html` at the repo root:
+   ```html
+   <li><a href="/public/recipes/{filename}">{recipe_name}</a><span class="meta">{date}</span></li>
+   ```
+   Insert it at the top of the existing list (most recent first).
+
+5. Run:
    ```bash
-   git add public/recipes/{filename}
+   git add public/recipes/{filename} index.html
    git commit -m "feat: add recipe {recipe_name}"
    git push
    ```
 
-5. Post the URL in the conversation:
+6. Post the URL in the conversation:
    ```
    Recipe published — live in ~60s:
    https://cooking-green-mu.vercel.app/public/recipes/{filename}
@@ -91,7 +97,7 @@ https://cooking-green-mu.vercel.app
     {technique_notes}
   </div>
 
-  <nav><a href="/">← Home</a></nav>
+  <nav><a href="/">← All recipes</a></nav>
 </body>
 </html>
 ```
