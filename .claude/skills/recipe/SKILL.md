@@ -1,3 +1,8 @@
+---
+name: recipe
+description: Publish the current recipe from conversation context as a self-contained HTML page, commit it to public/recipes/, push to main, and return the live Vercel URL. Invoke when Kevin says "publish the recipe", "finalize the recipe", "give me the final recipe", "save this recipe", or "drop the recipe".
+---
+
 # Recipe Publish Skill
 
 Publish the current recipe from conversation context as a self-contained HTML page, push it to the repo, and return the live Vercel URL.
