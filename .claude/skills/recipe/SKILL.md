@@ -111,6 +111,8 @@ https://cooking-green-mu.vercel.app
 
 - Fill every section from conversation context. Never output `{variable}` placeholders in the final HTML — replace them all with real content.
 - `{ingredients_as_li_items}`: each ingredient on its own `<li>` line, e.g. `<li>150g guanciale</li>`
+- **Ingredient order is mandatory: list ingredients in the exact order they are first incorporated in the Method steps** — not by category, quantity, or importance. Walk the method top to bottom and record each ingredient the first time it's added; that sequence is the ingredient list order. Example: if garlic and ginger go into step 1, they come before the coconut milk added in step 2. Group items added together in the same step in the order the step names them. Finishing/garnish items (added off-heat or "to serve") go last.
+- **Before writing the file, run this check:** for each ingredient, note the step number where it first appears, and confirm those step numbers are non-decreasing down the ingredient list. If any ingredient is out of order, reorder the list before generating HTML.
 - `{method_as_li_items}`: each step on its own `<li>` line
 - `{technique_notes}`: the "why it works" reasoning as prose, not a restatement of steps
 - If serves is unknown, omit `&middot; Serves {serves}` from the `.meta` line
