@@ -17,3 +17,4 @@ tools/epicure-mcp/src/**/__pycache__/
 !.claude/
 !.claude/skills/
 !.claude/skills/**
+.vercel
