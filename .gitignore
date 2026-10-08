@@ -17,7 +17,6 @@ tools/epicure-mcp/src/**/__pycache__/
 !.claude/
 !.claude/skills/
 !.claude/skills/**
-.vercel
 
 # Deploy credentials. Never commit.
 .deploy.env
