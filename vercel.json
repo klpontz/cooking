@@ -1,3 +1,5 @@
 {
-  "outputDirectory": "."
+  "redirects": [
+    { "source": "/(.*)", "destination": "https://kevinrocci.com/cooking/$1", "permanent": true }
+  ]
 }

@@ -71,7 +71,7 @@ Ingredient names must be lowercase and canonical (e.g., "guanciale", "parmesan",
 - `techniques/` — technique notes
 - `log/YYYY/` — session notes, experiments, outcomes
 - `wiki/` — HTML synthesis articles you maintain (see below)
-- `public/recipes/` — published recipe HTML pages, deployed via Vercel
+- `public/recipes/` — published recipe HTML pages, deployed to kevinrocci.com/cooking/ by `./deploy.sh`
 
 ## Wiki Maintenance
 
@@ -93,7 +93,7 @@ When Kevin says any of the following, invoke the `/recipe` skill immediately —
 - "save this recipe"
 - "drop the recipe"
 
-The skill generates a tagged HTML page, commits it to `public/recipes/`, pushes to main, and posts the Vercel URL in the thread.
+The skill generates a tagged HTML page, commits it to `public/recipes/`, pushes to main, runs `./deploy.sh`, and posts the kevinrocci.com URL in the thread.
 
 ## Advisory Rules
 
