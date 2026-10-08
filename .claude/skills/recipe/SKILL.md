@@ -1,17 +1,19 @@
 ---
 name: recipe
-description: Publish the current recipe from conversation context as a self-contained HTML page, commit it to public/recipes/, push to main, and return the live Vercel URL. Invoke when Kevin says "publish the recipe", "finalize the recipe", "give me the final recipe", "save this recipe", or "drop the recipe".
+description: Publish the current recipe from conversation context as a self-contained HTML page, commit it to public/recipes/, push to main, deploy to kevinrocci.com/cooking/, and return the live URL. Invoke when Kevin says "publish the recipe", "finalize the recipe", "give me the final recipe", "save this recipe", or "drop the recipe".
 ---
 
 # Recipe Publish Skill
 
-Publish the current recipe from conversation context as a self-contained HTML page, push it to the repo, and return the live Vercel URL.
+Publish the current recipe from conversation context as a self-contained HTML page, push it to the repo, deploy it, and return the live URL.
 
-## Your Vercel base URL
+## Live base URL
 
 ```
-https://cooking-green-mu.vercel.app
+https://kevinrocci.com/cooking
 ```
+
+The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must stay relative: the site lives under `/cooking/`, so a root-absolute link like `/public/...` breaks.
 
 ## Steps
 
@@ -31,7 +33,7 @@ https://cooking-green-mu.vercel.app
 
 4. Add a new `<li>` entry to the Recipes section of `index.html` at the repo root:
    ```html
-   <li><a href="/public/recipes/{filename}">{recipe_name}</a><span class="meta">{date}</span></li>
+   <li><a href="public/recipes/{filename}">{recipe_name}</a><span class="meta">{date}</span></li>
    ```
    Insert it at the top of the existing list (most recent first).
 
@@ -40,12 +42,15 @@ https://cooking-green-mu.vercel.app
    git add public/recipes/{filename} index.html
    git commit -m "feat: add recipe {recipe_name}"
    git push
+   ./deploy.sh
    ```
+
+   If `./deploy.sh` fails, report the error. Do not claim the recipe is live.
 
 6. Post the URL in the conversation:
    ```
-   Recipe published — live in ~60s:
-   https://cooking-green-mu.vercel.app/public/recipes/{filename}
+   Recipe published:
+   https://kevinrocci.com/cooking/public/recipes/{filename}
    ```
 
 ## HTML Template
@@ -102,7 +107,7 @@ https://cooking-green-mu.vercel.app
     {technique_notes}
   </div>
 
-  <nav><a href="/">← All recipes</a></nav>
+  <nav><a href="../../">← All recipes</a></nav>
 </body>
 </html>
 ```
@@ -116,4 +121,4 @@ https://cooking-green-mu.vercel.app
 - `{method_as_li_items}`: each step on its own `<li>` line
 - `{technique_notes}`: the "why it works" reasoning as prose, not a restatement of steps
 - If serves is unknown, omit `&middot; Serves {serves}` from the `.meta` line
-- No confirmation step — generate, write, commit, push, post URL
+- No confirmation step — generate, write, commit, push, deploy, post URL
