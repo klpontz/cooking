@@ -1,0 +1,4 @@
+# Vercel only serves a redirect now. Upload nothing else,
+# above all .deploy.env.
+/*
+!vercel.json
