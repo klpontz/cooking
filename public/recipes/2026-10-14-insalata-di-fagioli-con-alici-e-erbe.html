@@ -25,9 +25,17 @@
     ul, ol { padding-left: 1.4rem; }
     li { margin-bottom: 0.4rem; }
     .note { border-left: 3px solid #ddd; padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: #555; }
+    a { color: #1a1a1a; }
     nav { margin-top: 3rem; font-size: 0.85rem; }
     nav a { color: #555; text-decoration: none; }
     nav a:hover { text-decoration: underline; }
+    .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
+    .recipe-table { border-collapse: collapse; border: 2px solid #1a1a1a; font-size: 0.85rem; line-height: 1.35; width: 100%; }
+    .recipe-table td { border: 1px solid #999; padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
+    .recipe-table td.ing, .recipe-table td.blank { border-top-color: #e4e4e4; border-bottom-color: #e4e4e4; }
+    .recipe-table td.setup { background: #f4f4f4; border-bottom: 2px solid #1a1a1a; }
+    .recipe-table tr.group > td { border-top: 2px solid #1a1a1a; }
   </style>
 </head>
 <body>
@@ -53,6 +61,19 @@
     <li>Add the beans and stir to coat them in the sauce. Season with salt and pepper, going easy on the salt.</li>
     <li>Serve at room temperature.</li>
   </ol>
+
+  <h2>At a Glance</h2>
+  <div class="recipe-table-wrap">
+  <table class="recipe-table">
+    <tr><td class="ing">¼ cup extra-virgin olive oil</td><td class="blank"></td><td rowspan="2">warm over medium, brown garlic 3 min</td><td rowspan="3">mash in until dissolved</td><td rowspan="5">cook 5 min</td><td rowspan="6">stir to coat</td><td rowspan="7">season, serve at room temperature</td></tr>
+    <tr><td class="ing">1 garlic clove</td><td>peel</td></tr>
+    <tr><td class="ing">3 salt-packed anchovies</td><td colspan="2">rinse, fillet, chop</td></tr>
+    <tr><td class="ing">15 flat-leaf parsley sprigs</td><td colspan="3">chop leaves fine</td></tr>
+    <tr><td class="ing">2 Tbsp red wine vinegar</td><td colspan="3"></td></tr>
+    <tr><td class="ing">2 cups cooked Occhio della Capra, borlotti, or cranberry beans</td><td colspan="4">drain</td></tr>
+    <tr><td class="ing">salt and black pepper</td><td colspan="5"></td></tr>
+  </table>
+  </div>
 
   <h2>Notes</h2>
   <div class="note">

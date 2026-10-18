@@ -26,9 +26,17 @@
     ul, ol { padding-left: 1.4rem; }
     li { margin-bottom: 0.4rem; }
     .note { border-left: 3px solid #ddd; padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: #555; }
+    a { color: #1a1a1a; }
     nav { margin-top: 3rem; font-size: 0.85rem; }
     nav a { color: #555; text-decoration: none; }
     nav a:hover { text-decoration: underline; }
+    .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
+    .recipe-table { border-collapse: collapse; border: 2px solid #1a1a1a; font-size: 0.85rem; line-height: 1.35; width: 100%; }
+    .recipe-table td { border: 1px solid #999; padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
+    .recipe-table td.ing, .recipe-table td.blank { border-top-color: #e4e4e4; border-bottom-color: #e4e4e4; }
+    .recipe-table td.setup { background: #f4f4f4; border-bottom: 2px solid #1a1a1a; }
+    .recipe-table tr.group > td { border-top: 2px solid #1a1a1a; }
   </style>
 </head>
 <body>
@@ -55,6 +63,21 @@
     <li>While the pork cooks, surround it with the peaches cut-side down and dot with butter. Cook until soft and lightly charred, about 5 minutes. Move to a platter and tent with foil.</li>
     <li>Flip the pork and cook in the remaining butter another 5–7 minutes. Rest under foil for 5 minutes, then slice and serve with the peaches.</li>
   </ol>
+
+  <h2>At a Glance</h2>
+  <div class="recipe-table-wrap">
+  <table class="recipe-table">
+    <tr><td class="setup" colspan="8">Heat cast iron over a hot fire until very hot</td></tr>
+    <tr><td class="ing">2 lb boneless pork butt, butterflied</td><td>pound to ¾ in</td><td rowspan="2">season both sides</td><td rowspan="5">spread paste on both sides</td><td rowspan="6">sear undisturbed, 10 min</td><td rowspan="6">flip, cook in butter 5–7 min</td><td rowspan="6">rest 5 min, slice</td><td rowspan="8">serve together</td></tr>
+    <tr><td class="ing">kosher salt and black pepper</td><td class="blank"></td></tr>
+    <tr><td class="ing">8–10 cloves garlic, minced</td><td colspan="2" rowspan="3">mix into paste</td></tr>
+    <tr><td class="ing">2 Tbsp fresh rosemary, minced</td></tr>
+    <tr><td class="ing">6 Tbsp olive oil</td></tr>
+    <tr><td class="ing">2 Tbsp olive oil</td><td colspan="3">brush hot pan, heat until nearly smoking</td></tr>
+    <tr class="group"><td class="ing">6 peaches</td><td colspan="3">halve, pit</td><td rowspan="2">lay around pork cut-side down, dot with butter, cook 5 min</td><td colspan="2" rowspan="2">tent with foil</td></tr>
+    <tr><td class="ing">4 Tbsp butter</td><td colspan="3">dice</td></tr>
+  </table>
+  </div>
 
   <h2>Notes</h2>
   <div class="note">

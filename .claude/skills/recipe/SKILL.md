@@ -29,7 +29,7 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
 
 2. Construct the filename: `{date}-{slug}.html` (e.g., `2026-06-08-pasta-alla-gricia.html`)
 
-3. Write the file to `public/recipes/{filename}` using the HTML template below. Fill every placeholder with real content — never leave `{recipe_name}` or any other `{variable}` in the output.
+3. Write the file to `public/recipes/{filename}` using the HTML template below. Fill every placeholder with real content — never leave `{recipe_name}` or any other `{variable}` in the output. Build the At a Glance table by following the **At a Glance Table** rules below.
 
 4. Add a new `<li>` entry to the Recipes section of `index.html` at the repo root:
    ```html
@@ -37,8 +37,9 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
    ```
    Insert it at the top of the existing list (most recent first).
 
-5. Run:
+5. Check the table, then commit and deploy. Fix any table error before going on:
    ```bash
+   python3 .claude/skills/recipe/check_table.py public/recipes/{filename}
    git add public/recipes/{filename} index.html
    git commit -m "feat: add recipe {recipe_name}"
    git push
@@ -83,9 +84,17 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
     ul, ol { padding-left: 1.4rem; }
     li { margin-bottom: 0.4rem; }
     .note { border-left: 3px solid #ddd; padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: #555; }
+    a { color: #1a1a1a; }
     nav { margin-top: 3rem; font-size: 0.85rem; }
     nav a { color: #555; text-decoration: none; }
     nav a:hover { text-decoration: underline; }
+    .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
+    .recipe-table { border-collapse: collapse; border: 2px solid #1a1a1a; font-size: 0.85rem; line-height: 1.35; width: 100%; }
+    .recipe-table td { border: 1px solid #999; padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
+    .recipe-table td.ing, .recipe-table td.blank { border-top-color: #e4e4e4; border-bottom-color: #e4e4e4; }
+    .recipe-table td.setup { background: #f4f4f4; border-bottom: 2px solid #1a1a1a; }
+    .recipe-table tr.group > td { border-top: 2px solid #1a1a1a; }
   </style>
 </head>
 <body>
@@ -101,6 +110,13 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
   <ol>
     {method_as_li_items}
   </ol>
+
+  <h2>At a Glance</h2>
+  <div class="recipe-table-wrap">
+  <table class="recipe-table">
+    {table_rows}
+  </table>
+  </div>
 
   <h2>Notes</h2>
   <div class="note">
@@ -122,3 +138,27 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
 - `{technique_notes}`: the "why it works" reasoning as prose, not a restatement of steps
 - If serves is unknown, omit `&middot; Serves {serves}` from the `.meta` line
 - No confirmation step — generate, write, commit, push, deploy, post URL
+- `{table_rows}`: the `<tr>` rows of the At a Glance table. See the next section.
+
+## At a Glance Table
+
+The At a Glance table shows the whole recipe as one grid, in the tabular style from Cooking for Engineers. Ingredients run down the left. Steps run left to right. Merged cells show where ingredients come together. It goes after Method and before Notes. The Ingredients list and Method stay as they are.
+
+**Structure:**
+- Each ingredient gets one row. The first cell is `<td class="ing">` with the quantity and a short name (e.g. `2 Tbsp olive oil`). Leave the prep words out of the name when a step cell covers them.
+- Split a divided ingredient into one row per use (e.g. `1 Tbsp olive oil` for the rub, `2 Tbsp olive oil` for the sear).
+- Rows follow the order that ingredients enter the cooking. Ingredients that combine in one step must be on adjacent rows, so a single `rowspan` cell can join them.
+- Each cell to the right is a short step in lowercase, about 2–8 words, with times and temperatures (e.g. `sear 6–8 min, all sides`). Doneness cues and warnings stay in Method.
+- When ingredients combine, use one cell with `rowspan` over all of their rows. Each new merge column covers every row the previous merge covered, plus the new rows.
+- An ingredient that waits for a later step gets an empty cell with `colspan` that reaches the column where it joins. A single empty cell in a stack of ingredient rows gets `class="blank"`.
+- The last column is usually one cell that spans every row: the final assemble-and-serve step.
+- Setup that applies to the whole dish (oven heat, fire, a pan to heat) goes in an optional first row: `<tr><td class="setup" colspan="{total_columns}">Heat oven to 425°F</td></tr>`.
+
+**Groups:**
+- A group is a component prepared on its own track: a marinade, a sauce, a garnish, a side, or table condiments. Start each group after the first with `<tr class="group">`. This draws a heavy rule above it.
+- A single pot or pan with no separate components needs no group rows.
+
+**Size:**
+- Keep the table to 9 columns or fewer, including the ingredient column, so it fits the 680px page on desktop. Merge adjacent short steps to stay under the limit. On phones the table scrolls inside its box.
+
+**Check:** run `python3 .claude/skills/recipe/check_table.py public/recipes/{filename}`. It fails when a row has a gap, cells overlap, a `rowspan` runs past the last row, or a row does not start with `td.ing`. Fix and rerun until it prints `OK`.
