@@ -5,15 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cooking Wiki</title>
   <style>
-    body { font-family: Georgia, serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.7; }
-    h1 { font-size: 1.8rem; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; }
-    h2 { font-size: 1.2rem; margin-top: 2rem; color: #444; }
+    /* Palette from kevinrocci.com/work (yellow-billed magpie).
+       c50–c950: one tinted scale on the hue of the wing blue (#1A5F92),
+       near-white to near-black. Every neutral comes from it. */
+    :root {
+      --c50: #F5FAFE; --c100: #EDF2F7; --c200: #DDE4EA; --c300: #C6CFD7;
+      --c400: #9FABB6; --c500: #768593; --c600: #576878; --c700: #404F5C;
+      --c800: #2B3741; --c900: #192229; --c950: #0E151B;
+      --accent: #1A5F92;  /* wing blue: links */
+      --spark: #F0AD1B;   /* eye ring: one mark on the title rule */
+    }
+    body { font-family: Georgia, serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: var(--c900); background: var(--c50); line-height: 1.7; }
+    h1 { font-size: 1.8rem; padding-bottom: 8px; background: linear-gradient(to right, var(--spark) 0 3rem, var(--c900) 3rem) left bottom / 100% 2px no-repeat; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; color: var(--c700); }
     ul { padding-left: 1.2rem; }
     li { margin: 0.5rem 0; }
-    a { color: #1a1a1a; }
-    a:hover { color: #555; }
-    .desc { font-size: 0.9rem; color: #666; margin-left: 0.5rem; }
-    footer { margin-top: 3rem; font-size: 0.8rem; color: #aaa; border-top: 1px solid #eee; padding-top: 1rem; }
+    a { color: var(--accent); }
+    a:hover { color: var(--c700); }
+    code { color: var(--c800); }
+    .desc { font-size: 0.9rem; color: var(--c600); margin-left: 0.5rem; }
+    footer { margin-top: 3rem; font-size: 0.8rem; color: var(--c600); border-top: 1px solid var(--c200); padding-top: 1rem; }
   </style>
 </head>
 <body>

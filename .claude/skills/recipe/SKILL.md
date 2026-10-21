@@ -37,8 +37,9 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
    ```
    Insert it at the top of the existing list (most recent first).
 
-5. Check the table, then commit and deploy. Fix any table error before going on:
+5. Shade and check the table, then commit and deploy. Fix any table error before going on:
    ```bash
+   python3 .claude/skills/recipe/shade_table.py public/recipes/{filename}
    python3 .claude/skills/recipe/check_table.py public/recipes/{filename}
    git add public/recipes/{filename} index.html
    git commit -m "feat: add recipe {recipe_name}"
@@ -77,24 +78,38 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
   <meta name="recipe-main-ingredient" content="{main_ingredient}">
   <title>{recipe_name}</title>
   <style>
-    body { font-family: Georgia, serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.7; }
-    h1 { font-size: 1.8rem; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; margin-bottom: 0.3rem; }
-    .meta { font-size: 0.85rem; color: #888; margin-bottom: 2rem; }
-    h2 { font-size: 1.1rem; margin-top: 2rem; color: #444; text-transform: uppercase; letter-spacing: 0.05em; }
+    /* Palette from kevinrocci.com/work (yellow-billed magpie).
+       c50–c950: one tinted scale on the hue of the wing blue (#1A5F92),
+       near-white to near-black. Every neutral comes from it. */
+    :root {
+      --c50: #F5FAFE; --c100: #EDF2F7; --c200: #DDE4EA; --c300: #C6CFD7;
+      --c400: #9FABB6; --c500: #768593; --c600: #576878; --c700: #404F5C;
+      --c800: #2B3741; --c900: #192229; --c950: #0E151B;
+      --accent: #1A5F92;  /* wing blue: links */
+      --spark: #F0AD1B;   /* eye ring: one mark on the title rule */
+    }
+    body { font-family: Georgia, serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: var(--c900); background: var(--c50); line-height: 1.7; }
+    h1 { font-size: 1.8rem; padding-bottom: 8px; margin-bottom: 0.3rem; background: linear-gradient(to right, var(--spark) 0 3rem, var(--c900) 3rem) left bottom / 100% 2px no-repeat; }
+    .meta { font-size: 0.85rem; color: var(--c600); margin-bottom: 2rem; }
+    h2 { font-size: 1.1rem; margin-top: 2rem; color: var(--c700); text-transform: uppercase; letter-spacing: 0.05em; }
     ul, ol { padding-left: 1.4rem; }
     li { margin-bottom: 0.4rem; }
-    .note { border-left: 3px solid #ddd; padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: #555; }
-    a { color: #1a1a1a; }
+    .note { border-left: 3px solid var(--c200); padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: var(--c700); }
+    a { color: var(--accent); }
     nav { margin-top: 3rem; font-size: 0.85rem; }
-    nav a { color: #555; text-decoration: none; }
+    nav a { color: var(--c600); text-decoration: none; }
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
-    .recipe-table { border-collapse: collapse; border: 2px solid #1a1a1a; font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid #999; padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
+    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: #e4e4e4; border-bottom-color: #e4e4e4; }
-    .recipe-table td.setup { background: #f4f4f4; border-bottom: 2px solid #1a1a1a; }
-    .recipe-table tr.group > td { border-top: 2px solid #1a1a1a; }
+    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
+    .recipe-table td.lane { border-left-style: hidden; }
+    .recipe-table td.t1 { background: var(--c100); }
+    .recipe-table td.t2 { background: var(--c200); }
+    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
+    .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
 </head>
 <body>
@@ -150,7 +165,7 @@ The At a Glance table shows the whole recipe as one grid, in the tabular style f
 - Rows follow the order that ingredients enter the cooking. Ingredients that combine in one step must be on adjacent rows, so a single `rowspan` cell can join them.
 - Each cell to the right is a short step in lowercase, about 2–8 words, with times and temperatures (e.g. `sear 6–8 min, all sides`). Doneness cues and warnings stay in Method.
 - When ingredients combine, use one cell with `rowspan` over all of their rows. Each new merge column covers every row the previous merge covered, plus the new rows.
-- An ingredient that waits for a later step gets an empty cell with `colspan` that reaches the column where it joins. A single empty cell in a stack of ingredient rows gets `class="blank"`.
+- An ingredient that waits for a later step gets an empty cell with `colspan` that reaches the column where it joins. Leave empty cells as plain `<td></td>`. The shading script classes them.
 - The last column is usually one cell that spans every row: the final assemble-and-serve step.
 - Setup that applies to the whole dish (oven heat, fire, a pan to heat) goes in an optional first row: `<tr><td class="setup" colspan="{total_columns}">Heat oven to 425°F</td></tr>`.
 
@@ -160,5 +175,9 @@ The At a Glance table shows the whole recipe as one grid, in the tabular style f
 
 **Size:**
 - Keep the table to 9 columns or fewer, including the ingredient column, so it fits the 680px page on desktop. Merge adjacent short steps to stay under the limit. On phones the table scrolls inside its box.
+
+**Shading:** do not write the `t1`, `t2`, `t3`, `blank`, or `lane` classes by hand. Write `class="ing"` and `class="setup"` only. `shade_table.py` sets the rest from each cell's column: step cells darken from left to right, the final column gets the darkest tint, and an empty cell right of an ingredient becomes a lane with no dividing line.
+
+**Colors:** never use hex greys in a page. Every neutral comes from the `--c50`…`--c950` scale in the template, links use `--accent`, and `--spark` appears only on the title rule.
 
 **Check:** run `python3 .claude/skills/recipe/check_table.py public/recipes/{filename}`. It fails when a row has a gap, cells overlap, a `rowspan` runs past the last row, or a row does not start with `td.ing`. Fix and rerun until it prints `OK`.

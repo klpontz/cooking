@@ -5,29 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flavor Patterns — Cooking Wiki</title>
   <style>
-    body { font-family: Georgia, serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.7; }
-    h1 { font-size: 1.8rem; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; }
-    h2 { font-size: 1.2rem; margin-top: 2rem; color: #444; }
+    /* Palette from kevinrocci.com/work (yellow-billed magpie).
+       c50–c950: one tinted scale on the hue of the wing blue (#1A5F92),
+       near-white to near-black. Every neutral comes from it. */
+    :root {
+      --c50: #F5FAFE; --c100: #EDF2F7; --c200: #DDE4EA; --c300: #C6CFD7;
+      --c400: #9FABB6; --c500: #768593; --c600: #576878; --c700: #404F5C;
+      --c800: #2B3741; --c900: #192229; --c950: #0E151B;
+      --accent: #1A5F92;  /* wing blue: links */
+      --spark: #F0AD1B;   /* eye ring: one mark on the title rule */
+    }
+    body { font-family: Georgia, serif; max-width: 720px; margin: 40px auto; padding: 0 20px; color: var(--c900); background: var(--c50); line-height: 1.7; }
+    h1 { font-size: 1.8rem; padding-bottom: 8px; background: linear-gradient(to right, var(--spark) 0 3rem, var(--c900) 3rem) left bottom / 100% 2px no-repeat; }
+    h2 { font-size: 1.2rem; margin-top: 2rem; color: var(--c700); }
     nav { margin-bottom: 2rem; font-size: 0.9rem; }
-    nav a { color: #555; text-decoration: none; margin-right: 1rem; }
+    nav a { color: var(--c600); text-decoration: none; margin-right: 1rem; }
     nav a:hover { text-decoration: underline; }
-    .entry { border-left: 3px solid #ddd; padding-left: 1rem; margin: 1.5rem 0; }
-    .meta { font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; }
-    .empty { color: #aaa; font-style: italic; }
+    a { color: var(--accent); }
+    .entry { border-left: 3px solid var(--c200); padding-left: 1rem; margin: 1.5rem 0; }
+    .entry p { margin: 0.4rem 0; }
+    .meta { font-size: 0.8rem; color: var(--c600); margin-bottom: 0.5rem; }
+    .empty { color: var(--c600); font-style: italic; }
   </style>
 </head>
 <body>
   <nav><a href="index.html">← Index</a></nav>
   <h1>Flavor Patterns</h1>
-  <p>Ingredient combinations and techniques that keep working. Updated by Claude during cooking sessions.</p>
+  <p>Ingredient combinations and techniques that keep working, plus what did not. Updated by Claude during cooking sessions. Last updated 2026-10-20.</p>
+
+  <h2>Plate Balance</h2>
+  <div class="entry">
+    <p><strong>One star per plate.</strong></p>
+    <p>Pair a bold dish with a quiet one. Fennel-rosemary pork laid over an anchovy bean salad failed in October 2026: both dishes were loud, and they competed instead of contrasting. Putting the meat on the beans made it worse, because no bite tasted of one dish alone. A bold side wants a plain main, such as grilled bread or a simple roast chicken. A bold main wants a quiet side, such as plain white beans in olive oil, roast potatoes, or bitter greens with lemon.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-14-fennel-rosemary-pork-tenderloin.html">Fennel-Rosemary Pork Tenderloin</a> · <a href="../public/recipes/2026-10-14-insalata-di-fagioli-con-alici-e-erbe.html">Insalata di Fagioli</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Heat goes on the side.</strong></p>
+    <p>The base stays mild so it works for the whole family. Adults add chili crisp, sliced fresh chili, or a hot salsa at the table. This has held in three recipes. In the curry, 3 Tbsp of red curry paste lands mild-medium. Guajillo and ancho give the al pastor color and depth without much heat.</p>
+    <p class="meta"><a href="../public/recipes/2026-07-03-weeknight-coconut-chicken-curry.html">Coconut Chicken Curry</a> · <a href="../public/recipes/2026-07-11-al-pastor-style-grilled-pork-tacos.html">Al Pastor Tacos</a> · <a href="../public/recipes/2026-10-07-instant-pot-ginger-scallion-chicken-rice.html">Ginger-Scallion Chicken Rice</a></p>
+  </div>
 
   <h2>Combinations</h2>
-  <p class="empty">No entries yet. After your first few sessions, Claude will populate this with combinations worth remembering.</p>
+  <div class="entry">
+    <p><strong>Fennel seed, rosemary, and chili on pork.</strong></p>
+    <p>Arista flavors on a weeknight. Toasted, crushed fennel leads, rosemary gives the resinous note, and chili flakes give lift. Garden rosemary, thyme, and sage all fit. Fennel is the strongest bridge from pork to Italian vegetables and beans.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-14-fennel-rosemary-pork-tenderloin.html">Fennel-Rosemary Pork Tenderloin</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Garlic, rosemary, and olive oil paste with fruit in the drippings.</strong></p>
+    <p>A rough paste on fatty pork, cooked hard in cast iron. Peaches go in raw, cut side down, with butter around the meat. They take on the pork fat and char, and their sweetness concentrates without turning sugary or mushy.</p>
+    <p class="meta"><a href="../public/recipes/2026-06-08-fire-roasted-pork-with-peaches.html">Fire-Roasted Pork with Peaches</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Anchovy, garlic, vinegar, and parsley as a seasoning base.</strong></p>
+    <p>Anchovies mashed into warm oil dissolve into seasoning, not fish. They carry most of the salt, so taste before salting. Red wine vinegar and raw parsley cut the richness. Serve at room temperature: cold mutes the anchovy and the oil.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-14-insalata-di-fagioli-con-alici-e-erbe.html">Insalata di Fagioli</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Ginger, scallion, and hot oil.</strong></p>
+    <p>Grated ginger, scallion greens, and salt, with oil poured over at just below smoking. It should sizzle hard. The sauce carries as much of the dish as the chicken does.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-07-instant-pot-ginger-scallion-chicken-rice.html">Ginger-Scallion Chicken Rice</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Dried chile adobo with achiote and citrus.</strong></p>
+    <p>Guajillo and ancho, toasted and soaked, blended with achiote, garlic, orange, cider vinegar, cumin, and Mexican oregano. Grilled pineapple and onion are chopped into the meat at the end, so the sweetness comes from char, not from the marinade.</p>
+    <p class="meta"><a href="../public/recipes/2026-07-11-al-pastor-style-grilled-pork-tacos.html">Al Pastor Tacos</a></p>
+  </div>
 
   <h2>Techniques</h2>
-  <p class="empty">No entries yet.</p>
+  <div class="entry">
+    <p><strong>Pound to an even thickness for high heat.</strong></p>
+    <p>Butterfly and pound fatty cuts to about ¾ inch. Thin, even slabs take a deep crust fast without drying out, and hot cast iron needs even contact. This works over fire and on a griddle.</p>
+    <p class="meta"><a href="../public/recipes/2026-06-08-fire-roasted-pork-with-peaches.html">Fire-Roasted Pork with Peaches</a> · <a href="../public/recipes/2026-07-11-al-pastor-style-grilled-pork-tacos.html">Al Pastor Tacos</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Give lean meat its missing fat.</strong></p>
+    <p>A lean tenderloin renders almost no fat. Use more olive oil to carry the sear and crisp the herbs. Deglaze with a splash of white wine to make the jus the meat cannot make on its own. Pull at 140°F and check early: with so little fat, a few degrees past that turns it dry.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-14-fennel-rosemary-pork-tenderloin.html">Fennel-Rosemary Pork Tenderloin</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Render trimmed fat and cook in it.</strong></p>
+    <p>Trim the fat pockets from chicken thighs and render them to start the aromatics and toast the rice. It is the traditional Hainanese move. It costs nothing, and it is the biggest flavor gain in the dish.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-07-instant-pot-ginger-scallion-chicken-rice.html">Ginger-Scallion Chicken Rice</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Bloom the paste, split the cream, balance at the end.</strong></p>
+    <p>For coconut curry, fry the paste in oil until it darkens, then fry it in the thick coconut cream until the fat splits. That builds a savory base before any liquid goes in. Balance off the heat: fish sauce sets the salt, only a teaspoon of sugar, and lime last so it stays bright. Coconut curries fall flat when they skew sweet.</p>
+    <p class="meta"><a href="../public/recipes/2026-07-03-weeknight-coconut-chicken-curry.html">Coconut Chicken Curry</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Keep raw pineapple out of long marinades.</strong></p>
+    <p>Bromelain in fresh pineapple breaks down protein and turns meat mushy over a multi-day marinade. Simmer the juice for 3–4 minutes to kill the enzyme, then use it. Keep the fresh fruit for the grill.</p>
+    <p class="meta"><a href="../public/recipes/2026-07-11-al-pastor-style-grilled-pork-tacos.html">Al Pastor Tacos</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Freeze in the marinade to travel.</strong></p>
+    <p>Bag the meat in its marinade and freeze it solid. It keeps marinating as it thaws over 2–3 nights in a cooler, and the frozen block holds below 40°F. The acidic adobo adds a margin of safety.</p>
+    <p class="meta"><a href="../public/recipes/2026-07-11-al-pastor-style-grilled-pork-tacos.html">Al Pastor Tacos</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Instant Pot rice under chicken.</strong></p>
+    <p>Use rinsed jasmine rice and stock at 1:1. Less stock scorched the bottom layer and left it hard. Cook 4 minutes on High with a 10-minute natural release. Scrape the pot clean before sealing it. Keep soy and marinade on top of the chicken, because soy sugars scorch on the bottom. Boneless thighs beat breasts here: they stay juicy up to about 190°F, so the rice sets the timing, not the meat.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-07-instant-pot-ginger-scallion-chicken-rice.html">Ginger-Scallion Chicken Rice</a></p>
+  </div>
 
   <h2>Cross-Cuisine Moves</h2>
-  <p class="empty">No entries yet.</p>
+  <div class="entry">
+    <p><strong>Italian rubs on live fire.</strong></p>
+    <p>The arista rub works on a two-zone fire: sear hot, finish on the cool side to 140°F. Skip the wine and spoon olive oil with crisp sage over the slices instead. Mallmann-style cast iron over a fire suits Italian garlic-and-rosemary pork the same way.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-14-fennel-rosemary-pork-tenderloin.html">Fennel-Rosemary Pork Tenderloin</a> · <a href="../public/recipes/2026-06-08-fire-roasted-pork-with-peaches.html">Fire-Roasted Pork with Peaches</a></p>
+  </div>
+  <div class="entry">
+    <p><strong>Classic two-pot dishes folded into one pot.</strong></p>
+    <p>Hainanese chicken rice normally poaches the chicken, then cooks the rice in its fat and broth. In a pressure cooker, the rice cooks under the chicken and catches the juices as they drip. The flavor logic stays the same, and the steps collapse to one.</p>
+    <p class="meta"><a href="../public/recipes/2026-10-07-instant-pot-ginger-scallion-chicken-rice.html">Ginger-Scallion Chicken Rice</a></p>
+  </div>
 </body>
 </html>

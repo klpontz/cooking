@@ -18,24 +18,38 @@
   <meta name="recipe-main-ingredient" content="pork tenderloin">
   <title>Fennel-Rosemary Pork Tenderloin</title>
   <style>
-    body { font-family: Georgia, serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.7; }
-    h1 { font-size: 1.8rem; border-bottom: 2px solid #1a1a1a; padding-bottom: 8px; margin-bottom: 0.3rem; }
-    .meta { font-size: 0.85rem; color: #888; margin-bottom: 2rem; }
-    h2 { font-size: 1.1rem; margin-top: 2rem; color: #444; text-transform: uppercase; letter-spacing: 0.05em; }
+    /* Palette from kevinrocci.com/work (yellow-billed magpie).
+       c50–c950: one tinted scale on the hue of the wing blue (#1A5F92),
+       near-white to near-black. Every neutral comes from it. */
+    :root {
+      --c50: #F5FAFE; --c100: #EDF2F7; --c200: #DDE4EA; --c300: #C6CFD7;
+      --c400: #9FABB6; --c500: #768593; --c600: #576878; --c700: #404F5C;
+      --c800: #2B3741; --c900: #192229; --c950: #0E151B;
+      --accent: #1A5F92;  /* wing blue: links */
+      --spark: #F0AD1B;   /* eye ring: one mark on the title rule */
+    }
+    body { font-family: Georgia, serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: var(--c900); background: var(--c50); line-height: 1.7; }
+    h1 { font-size: 1.8rem; padding-bottom: 8px; margin-bottom: 0.3rem; background: linear-gradient(to right, var(--spark) 0 3rem, var(--c900) 3rem) left bottom / 100% 2px no-repeat; }
+    .meta { font-size: 0.85rem; color: var(--c600); margin-bottom: 2rem; }
+    h2 { font-size: 1.1rem; margin-top: 2rem; color: var(--c700); text-transform: uppercase; letter-spacing: 0.05em; }
     ul, ol { padding-left: 1.4rem; }
     li { margin-bottom: 0.4rem; }
-    .note { border-left: 3px solid #ddd; padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: #555; }
-    a { color: #1a1a1a; }
+    .note { border-left: 3px solid var(--c200); padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: var(--c700); }
+    a { color: var(--accent); }
     nav { margin-top: 3rem; font-size: 0.85rem; }
-    nav a { color: #555; text-decoration: none; }
+    nav a { color: var(--c600); text-decoration: none; }
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
-    .recipe-table { border-collapse: collapse; border: 2px solid #1a1a1a; font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid #999; padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
+    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: #e4e4e4; border-bottom-color: #e4e4e4; }
-    .recipe-table td.setup { background: #f4f4f4; border-bottom: 2px solid #1a1a1a; }
-    .recipe-table tr.group > td { border-top: 2px solid #1a1a1a; }
+    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
+    .recipe-table td.lane { border-left-style: hidden; }
+    .recipe-table td.t1 { background: var(--c100); }
+    .recipe-table td.t2 { background: var(--c200); }
+    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
+    .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
 </head>
 <body>
@@ -75,35 +89,35 @@
     <tr>
       <td class="ing">1 pork tenderloin (1–1¼ lb)</td>
       <td colspan="2">trim silverskin</td>
-      <td rowspan="8">rub over pork</td>
-      <td rowspan="9">sear 6–8 min, all sides</td>
-      <td rowspan="9">roast to 140°F, 8–12 min</td>
-      <td rowspan="9">rest 5 min, slice ½ in</td>
-      <td rowspan="12">spoon on juices, scatter sage</td>
+      <td class="t1" rowspan="8">rub over pork</td>
+      <td class="t1" rowspan="9">sear 6–8 min, all sides</td>
+      <td class="t2" rowspan="9">roast to 140°F, 8–12 min</td>
+      <td class="t2" rowspan="9">rest 5 min, slice ½ in</td>
+      <td class="t3" rowspan="12">spoon on juices, scatter sage</td>
     </tr>
     <tr>
       <td class="ing">1½ tsp fennel seed</td>
       <td>toast, crush</td>
       <td rowspan="7">mix into paste</td>
     </tr>
-    <tr><td class="ing">1 Tbsp fresh rosemary, finely chopped</td><td class="blank"></td></tr>
-    <tr><td class="ing">1 tsp fresh thyme leaves</td><td class="blank"></td></tr>
-    <tr><td class="ing">½ tsp chili flakes</td><td class="blank"></td></tr>
-    <tr><td class="ing">1 tsp kosher salt</td><td class="blank"></td></tr>
-    <tr><td class="ing">black pepper</td><td class="blank"></td></tr>
-    <tr><td class="ing">1 Tbsp olive oil</td><td class="blank"></td></tr>
+    <tr><td class="ing">1 Tbsp fresh rosemary, finely chopped</td><td class="blank lane"></td></tr>
+    <tr><td class="ing">1 tsp fresh thyme leaves</td><td class="blank lane"></td></tr>
+    <tr><td class="ing">½ tsp chili flakes</td><td class="blank lane"></td></tr>
+    <tr><td class="ing">1 tsp kosher salt</td><td class="blank lane"></td></tr>
+    <tr><td class="ing">black pepper</td><td class="blank lane"></td></tr>
+    <tr><td class="ing">1 Tbsp olive oil</td><td class="blank lane"></td></tr>
     <tr>
       <td class="ing">2 Tbsp olive oil</td>
-      <td colspan="3">heat in cast iron until shimmering</td>
+      <td class="t1" colspan="3">heat in cast iron until shimmering</td>
     </tr>
     <tr class="group">
       <td class="ing">1 Tbsp olive oil</td>
-      <td colspan="6" rowspan="2">fry in the pork pan until crisp, 30 sec</td>
+      <td class="t2" colspan="6" rowspan="2">fry in the pork pan until crisp, 30 sec</td>
     </tr>
     <tr><td class="ing">8–10 fresh sage leaves</td></tr>
     <tr class="group">
       <td class="ing">¼ cup dry white wine</td>
-      <td colspan="6">deglaze the pan, simmer 1 min, add resting juices</td>
+      <td class="t2" colspan="6">deglaze the pan, simmer 1 min, add resting juices</td>
     </tr>
   </table>
   </div>
