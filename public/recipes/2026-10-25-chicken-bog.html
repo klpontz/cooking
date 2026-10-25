@@ -1,0 +1,136 @@
+<!--
+  recipe: Chicken Bog
+  date: 2026-10-25
+  serves: 6
+  cuisine: other
+  type: soup, weekend
+  main-ingredient: chicken
+  tags: other, soup, weekend, chicken
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="recipe-tags" content="other, soup, weekend, chicken">
+  <meta name="recipe-cuisine" content="other">
+  <meta name="recipe-type" content="soup, weekend">
+  <meta name="recipe-main-ingredient" content="chicken">
+  <title>Chicken Bog</title>
+  <style>
+    /* Palette from kevinrocci.com/work (yellow-billed magpie).
+       c50–c950: one tinted scale on the hue of the wing blue (#1A5F92),
+       near-white to near-black. Every neutral comes from it. */
+    :root {
+      --c50: #F5FAFE; --c100: #EDF2F7; --c200: #DDE4EA; --c300: #C6CFD7;
+      --c400: #9FABB6; --c500: #768593; --c600: #576878; --c700: #404F5C;
+      --c800: #2B3741; --c900: #192229; --c950: #0E151B;
+      --accent: #1A5F92;  /* wing blue: links */
+      --spark: #F0AD1B;   /* eye ring: one mark on the title rule */
+    }
+    body { font-family: Georgia, serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: var(--c900); background: var(--c50); line-height: 1.7; }
+    h1 { font-size: 1.8rem; padding-bottom: 8px; margin-bottom: 0.3rem; background: linear-gradient(to right, var(--spark) 0 3rem, var(--c900) 3rem) left bottom / 100% 2px no-repeat; }
+    .meta { font-size: 0.85rem; color: var(--c600); margin-bottom: 2rem; }
+    h2 { font-size: 1.1rem; margin-top: 2rem; color: var(--c700); text-transform: uppercase; letter-spacing: 0.05em; }
+    ul, ol { padding-left: 1.4rem; }
+    li { margin-bottom: 0.4rem; }
+    .note { border-left: 3px solid var(--c200); padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: var(--c700); }
+    a { color: var(--accent); }
+    nav { margin-top: 3rem; font-size: 0.85rem; }
+    nav a { color: var(--c600); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
+    .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
+    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
+    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
+    .recipe-table td.lane { border-left-style: hidden; }
+    .recipe-table td.t1 { background: var(--c100); }
+    .recipe-table td.t2 { background: var(--c200); }
+    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
+    .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
+  </style>
+</head>
+<body>
+  <h1>Chicken Bog</h1>
+  <p class="meta">2026-10-25 &middot; Serves 6</p>
+
+  <h2>Ingredients</h2>
+  <ul>
+    <li>1 Tbsp extra-virgin olive oil, canola oil, peanut oil, or lard</li>
+    <li>2 dried red chiles (serrano, Thai, or similar), stems trimmed, slit, seeded, and flattened</li>
+    <li>1 tsp mustard seeds</li>
+    <li>1 cinnamon stick</li>
+    <li>3 cardamom pods</li>
+    <li>One 4½–5 lb chicken, quartered and skinned, giblets finely chopped</li>
+    <li>½ lb sweet Italian sausage (about 4 links), casings removed</li>
+    <li>1 cup full-bodied red wine (Merlot, Cabernet, or Syrah) or dry white wine</li>
+    <li>3 Tbsp unsalted butter</li>
+    <li>2 Tbsp all-purpose flour</li>
+    <li>2 cups chopped yellow onion (about 2 large)</li>
+    <li>1¾ cups chopped celery (about 6 stalks)</li>
+    <li>2 cups chopped red or green bell peppers (about 3)</li>
+    <li>2 garlic cloves, minced</li>
+    <li>One 28-oz can chopped tomatoes</li>
+    <li>2 bunches collard greens, stems removed, cut into 1-inch strips</li>
+    <li>2 Tbsp minced fresh thyme</li>
+    <li>2 cups chicken broth</li>
+    <li>Fish sauce, kosher salt, and black pepper, to taste</li>
+    <li>Hot white rice, to serve</li>
+    <li>½ cup chopped fresh flat-leaf parsley</li>
+    <li>½ cup chopped green onions</li>
+  </ul>
+
+  <h2>Method</h2>
+  <ol>
+    <li>Toast the chiles. Heat the oil in an 8-quart stockpot or Dutch oven over medium-high heat. When it shimmers, toast the chiles until they discolor and smell fragrant, about 30 seconds per side. Move them to a large bowl.</li>
+    <li>Bloom the spices and brown the meat. Turn the heat down to medium. Add the mustard seeds, cinnamon stick, and cardamom pods. When the seeds start to pop, add the chicken pieces, 2 at a time if needed, and sear until golden brown, 4–5 minutes per side. Watch the heat: too hot and the mustard seeds burn and turn bitter. Move the chicken, cinnamon, and cardamom to the bowl. Add the sausage and giblets to the pot, break up the sausage with a wooden spoon, and cook until browned, about 6 minutes. Move them to the bowl.</li>
+    <li>Deglaze. Add the wine and bring it to a boil over high heat, scraping up the browned bits. Boil until reduced by a quarter, about 4 minutes. Pour the wine, with the mustard seeds in it, over the meats and spices in the bowl.</li>
+    <li>Build the base in layers. Turn the heat to medium-high and add the butter. When it melts, stir in the flour and stir constantly for 2 minutes until smooth. Add the onion and cook, stirring, until translucent and starting to color, 5–10 minutes. Add the celery, peppers, and garlic and cook, stirring, until the peppers turn pale and the flour is a pale tan, about 5 minutes.</li>
+    <li>Simmer. Add the tomatoes and collards, then the contents of the bowl, the thyme, and the broth. The collards wilt down as they heat. Cover and bring to a vigorous simmer over medium-high heat. Turn the heat to low, uncover, and simmer gently for 25 minutes, until the broth has reduced by about a quarter. Turn off the heat.</li>
+    <li>Pick the chicken. Move the chicken pieces to a cutting board and fish out the cinnamon stick and cardamom pods. When the chicken is cool enough to handle, pick the meat and discard the bones. Return the meat to the pot and simmer over medium for 15 minutes, breaking the chicken into threads as you stir. Turn off the heat. Season with fish sauce first, about 1 Tbsp to start, then salt and pepper.</li>
+    <li>Rest 5 minutes. Serve in deep bowls over hot white rice, topped with parsley and green onions.</li>
+  </ol>
+
+  <h2>At a Glance</h2>
+  <div class="recipe-table-wrap">
+  <table class="recipe-table">
+    <tr><td class="ing">1 Tbsp oil</td><td class="blank lane"></td><td rowspan="2">heat, toast chiles 30 sec a side</td><td rowspan="5">medium heat; add spices until seeds pop</td><td class="t1" rowspan="6">brown chicken 4–5 min a side</td><td class="t1" rowspan="8">brown 6 min; move all to a bowl</td><td class="t2" rowspan="9">deglaze, reduce by ¼, pour over meats</td><td class="t2" rowspan="19">combine; simmer covered, then 25 min uncovered</td><td class="t3" rowspan="23">pick chicken, simmer 15 min, season; serve over rice, garnish</td></tr>
+    <tr><td class="ing">2 dried red chiles</td><td>seed, flatten</td></tr>
+    <tr><td class="ing">1 tsp mustard seeds</td><td class="blank lane" colspan="2"></td></tr>
+    <tr><td class="ing">1 cinnamon stick</td><td class="blank lane" colspan="2"></td></tr>
+    <tr><td class="ing">3 cardamom pods</td><td class="blank lane" colspan="2"></td></tr>
+    <tr><td class="ing">4½–5 lb chicken</td><td colspan="3">quarter, skin</td></tr>
+    <tr><td class="ing">its giblets</td><td class="t1" colspan="4">chop fine</td></tr>
+    <tr><td class="ing">½ lb sweet Italian sausage</td><td class="t1" colspan="4">remove casings</td></tr>
+    <tr><td class="ing">1 cup red or white wine</td><td class="blank lane" colspan="5"></td></tr>
+    <tr><td class="ing">3 Tbsp butter</td><td class="blank lane"></td><td rowspan="2">melt, stir in flour 2 min</td><td rowspan="3">add onion, cook 5–10 min</td><td class="t2" colspan="3" rowspan="6">add, sauté 5 min</td></tr>
+    <tr><td class="ing">2 Tbsp flour</td><td class="blank lane"></td></tr>
+    <tr><td class="ing">2 cups yellow onion</td><td>chop</td><td class="blank"></td></tr>
+    <tr><td class="ing">1¾ cups celery</td><td>chop</td><td class="blank" colspan="2"></td></tr>
+    <tr><td class="ing">2 cups bell peppers</td><td>chop</td><td class="blank" colspan="2"></td></tr>
+    <tr><td class="ing">2 garlic cloves</td><td>mince</td><td class="blank" colspan="2"></td></tr>
+    <tr><td class="ing">28-oz can chopped tomatoes</td><td class="blank lane" colspan="6"></td></tr>
+    <tr><td class="ing">2 bunches collards</td><td class="t2" colspan="6">stem, cut 1-in strips</td></tr>
+    <tr><td class="ing">2 Tbsp fresh thyme</td><td class="t2" colspan="6">mince</td></tr>
+    <tr><td class="ing">2 cups chicken broth</td><td class="blank lane" colspan="6"></td></tr>
+    <tr><td class="ing">fish sauce, salt, pepper</td><td class="blank lane" colspan="7"></td></tr>
+    <tr class="group"><td class="ing">white rice</td><td class="t2" colspan="7">cook</td></tr>
+    <tr><td class="ing">½ cup parsley</td><td class="t2" colspan="7">chop</td></tr>
+    <tr><td class="ing">½ cup green onions</td><td class="t2" colspan="7">chop</td></tr>
+  </table>
+  </div>
+
+  <h2>Notes</h2>
+  <div class="note">
+    <p>Adapted from Matt Lee and Ted Lee, <em>The Lee Bros. Southern Cookbook</em> (W. W. Norton, 2006), p. 277.</p>
+    <p>Bog is a Lowcountry cousin of pilau: chicken and rice cooked down until the chicken falls into threads. The bones give it body. Long cooking concentrates the chicken flavor, and the giblets push it toward dark meat.</p>
+    <p>Our changes, from the notes in our copy: mustard seeds, cinnamon, and cardamom bloom in the oil before the chicken goes in. The onions cook alone first, so they sweeten before the other vegetables crowd the pot. Collards go in with the tomatoes. Fish sauce seasons it at the end, and it does more than salt alone. White wine works as well as red.</p>
+    <p>Keep the pot at medium while the spices are in the oil. Burnt mustard seeds turn the whole pot bitter. The two dried chiles give flavor, not much heat. Add a third chile, or pass hot sauce, if you want it hotter.</p>
+    <p>For the best flavor, cool it and refrigerate for 24 hours. Spoon the fat off the top before you reheat.</p>
+  </div>
+
+  <nav><a href="../../">← All recipes</a></nav>
+</body>
+</html>
