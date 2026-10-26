@@ -3,7 +3,7 @@
 **Date:** 2026-10-26
 **Cooked:** Sunday Collards and Crispy Corn Bread (both Lee Bros., published on the site), plus Kevin's own pot of beans.
 
-## Kevin's beans (as told, not yet measured)
+## Kevin's beans (published as Oven Jackson Wonder Beans)
 
 1. Sauté shallots in bacon fat.
 2. Strip the collards. Mince the ribs small and add them to the pot.
@@ -14,13 +14,16 @@
 7. Add the soaked beans and water to about 1 inch above the beans.
 8. Add 2 dried shiitake and 2 pieces of dried seaweed (kombu).
 9. Bring almost to a boil. Move to a 300°F oven.
-10. Pull the seaweed after 30 minutes. Cook until tender. The pot never really boils.
+10. Pull the seaweed after 30 minutes. Cook until tender, about 1½–2 hours. The pot never really boils.
+11. Pull the chiles and shiitake. Chop the shiitake and return them.
+12. Season with salt and MSG halfway through and again at the end.
+13. Rest 15 minutes on the stove. Serve warm.
 
-## Open questions
+## Answers
 
-- **Bean:** a red, lima-type bean from the most recent Rancho Gordo Bean Club box. Best guess: Christmas Lima (maroon-and-white speckled, chestnut flavor). Low confidence. Check the bag.
-- Amounts: beans, shallots, bacon fat, garlic, total oven time.
-- How it tasted.
+- **Bean:** Jackson Wonder (speckled heirloom lima), the whole 1 lb bag. Fall 2026 Rancho Gordo Bean Club box.
+- **Amounts:** ½ cup shallots, a heaping Tbsp bacon fat, 3 garlic cloves.
+- **Verdict:** a definite winner. Kevin's wife loved it and went back for more. The daughter ate the beans and loved the corn bread. She was lukewarm on the collards, which were cooked short and not fully soft. Next time give the collards their full time.
 
 ## Patterns worth noting
 
