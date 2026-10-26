@@ -13,7 +13,7 @@
 6. Add 2 dried chiles, about 1 tsp Rancho Gordo bean seasoning, and 2 California bay leaves.
 7. Add the soaked beans and water to about 1 inch above the beans.
 8. Add 2 dried shiitake and 2 pieces of dried seaweed (kombu).
-9. Bring almost to a boil. Move to a 300°F oven.
+9. Bring almost to a boil on the stove. Move to a 300°F oven, lid on. The pot never hits a hard boil.
 10. Pull the seaweed after 30 minutes. Cook until tender, about 1½–2 hours. The pot never really boils.
 11. Pull the chiles and shiitake. Chop the shiitake and return them.
 12. Season with salt and MSG halfway through and again at the end.
