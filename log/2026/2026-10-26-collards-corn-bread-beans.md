@@ -22,7 +22,7 @@
 ## Answers
 
 - **Bean:** Jackson Wonder (speckled heirloom lima), the whole 1 lb bag. Fall 2026 Rancho Gordo Bean Club box.
-- **Amounts:** ½ cup shallots, a heaping Tbsp bacon fat, 3 garlic cloves.
+- **Amounts:** ½ cup shallots, 2 celery ribs and 3 small carrots (about ⅔ cup minced each), a heaping Tbsp bacon fat, 3 garlic cloves. Rinse, sort, soak overnight. Lid on. No water added during the bake.
 - **Verdict:** a definite winner. Kevin's wife loved it and went back for more. The daughter ate the beans and loved the corn bread. She was lukewarm on the collards, which were cooked short and not fully soft. Next time give the collards their full time.
 
 ## Patterns worth noting
