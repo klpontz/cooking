@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -79,13 +78,13 @@
   <h2>At a Glance</h2>
   <div class="recipe-table-wrap">
   <table class="recipe-table">
-    <tr><td class="ing">1 Tbsp oil</td><td class="blank lane"></td><td rowspan="2">score hock, sear 6 min</td><td class="t1" rowspan="3">add; it spits</td><td class="t1" rowspan="5">add, simmer 30 min</td><td class="t2" rowspan="6">add by handfuls, 6–10 min</td><td class="t2" rowspan="6">simmer very gently 1 hr</td><td class="t3" rowspan="7">serve with a slotted spoon</td></tr>
-    <tr><td class="ing">1 smoked ham hock</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">8 cups water</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">3 dried chiles</td><td class="blank lane" colspan="3"></td></tr>
-    <tr><td class="ing">1 Tbsp kosher salt</td><td class="blank lane" colspan="3"></td></tr>
-    <tr><td class="ing">3¾ lb collard greens</td><td class="t1" colspan="4">stem, wash, cut 1-in strips</td></tr>
-    <tr class="group"><td class="ing">pepper vinegar</td><td class="blank lane" colspan="6"></td></tr>
+    <tr><td class="ing or">1 Tbsp oil</td><td class="blank ol or"></td><td rowspan="2">score hock, sear 6 min</td><td rowspan="3">add; it spits</td><td rowspan="5">add, simmer 30 min</td><td rowspan="6">add by handfuls, 6–10 min</td><td rowspan="6">simmer very gently 1 hr</td><td class="t3" rowspan="7">serve with a slotted spoon</td></tr>
+    <tr><td class="ing or">1 smoked ham hock</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">8 cups water</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">3 dried chiles</td><td class="blank ol or" colspan="3"></td></tr>
+    <tr><td class="ing or">1 Tbsp kosher salt</td><td class="blank ol or" colspan="3"></td></tr>
+    <tr><td class="ing or">3¾ lb collard greens</td><td class="prep ol or" colspan="4">stem, wash, cut 1-in strips</td></tr>
+    <tr class="group"><td class="ing or">pepper vinegar</td><td class="blank ol or" colspan="6"></td></tr>
   </table>
   </div>
 

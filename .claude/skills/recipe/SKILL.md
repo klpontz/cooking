@@ -101,13 +101,12 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -162,9 +161,12 @@ The At a Glance table shows the whole recipe as one grid, in the tabular style f
 **Structure:**
 - Each ingredient gets one row. The first cell is `<td class="ing">` with the quantity and a short name (e.g. `2 Tbsp olive oil`). Leave the prep words out of the name when a step cell covers them.
 - Split a divided ingredient into one row per use (e.g. `1 Tbsp olive oil` for the rub, `2 Tbsp olive oil` for the sear).
-- Rows follow the order that ingredients enter the cooking. Ingredients that combine in one step must be on adjacent rows, so a single `rowspan` cell can join them.
+- Rows follow the order that ingredients enter the pot, not the order they are prepped. Beans soaked the night before still go on the row just above the water they cook in. Ingredients that combine in one step must be on adjacent rows, so a single `rowspan` cell can join them.
+- The table rows can differ from the Ingredients list order. The list follows first use in Method. The table follows when each ingredient enters the cooking.
 - Each cell to the right is a short step in lowercase, about 2–8 words, with times and temperatures (e.g. `sear 6–8 min, all sides`). Doneness cues and warnings stay in Method.
 - When ingredients combine, use one cell with `rowspan` over all of their rows. Each new merge column covers every row the previous merge covered, plus the new rows.
+- Merge a cooking step across rows when adjacent ingredients get the same step side by side (pineapple and onion both `char until marked and soft`). Write it once.
+- Never merge knife work or measuring. Repeat `chop`, `slice`, `mince` on each row. A short repeated word reads as part of each lane. A merged one reads as a combining step.
 - An ingredient that waits for a later step gets an empty cell with `colspan` that reaches the column where it joins. Leave empty cells as plain `<td></td>`. The shading script classes them.
 - The last column is usually one cell that spans every row: the final assemble-and-serve step.
 - Setup that applies to the whole dish (oven heat, fire, a pan to heat) goes in an optional first row: `<tr><td class="setup" colspan="{total_columns}">Heat oven to 425°F</td></tr>`.
@@ -176,7 +178,11 @@ The At a Glance table shows the whole recipe as one grid, in the tabular style f
 **Size:**
 - Keep the table to 9 columns or fewer, including the ingredient column, so it fits the 680px page on desktop. Merge adjacent short steps to stay under the limit. On phones the table scrolls inside its box.
 
-**Shading:** do not write the `t1`, `t2`, `t3`, `blank`, or `lane` classes by hand. Write `class="ing"` and `class="setup"` only. `shade_table.py` sets the rest from each cell's column: step cells darken from left to right, the final column gets the darkest tint, and an empty cell right of an ingredient becomes a lane with no dividing line.
+**Lines and shading:** do not write the `blank`, `prep`, `t3`, `ol`, or `or` classes by hand. Write `class="ing"` and `class="setup"` only. `shade_table.py` sets the rest:
+- A lane is an ingredient row up to the step where it joins. The ingredient, its single-row knife or measuring cell (`prep`, left-aligned), and its empty cells have no vertical lines between them. The lane also runs open into a multi-row step.
+- Every step keeps its other lines, so a single-row cooking step reads as a box.
+- Only the final column is tinted.
+- All thin lines are 1px `--c300`, so lines that meet always match. Frame lines (outer border, setup row, group rule) are 2px `--c900`.
 
 **Colors:** never use hex greys in a page. Every neutral comes from the `--c50`…`--c950` scale in the template, links use `--accent`, and `--spark` appears only on the title rule.
 

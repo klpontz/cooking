@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -78,13 +77,13 @@
   <h2>At a Glance</h2>
   <div class="recipe-table-wrap">
   <table class="recipe-table">
-    <tr><td class="ing">15 oz all-purpose flour</td><td rowspan="3">weigh</td><td class="t1" rowspan="7">whisk until even</td><td class="t3" rowspan="7">seal in a 2-quart jar; shake before use</td></tr>
-    <tr><td class="ing">7½ oz whole wheat flour</td></tr>
-    <tr><td class="ing">7½ oz buckwheat flour</td></tr>
-    <tr><td class="ing">1 Tbsp baking powder</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1½ tsp baking soda</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 Tbsp kosher salt</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">3 Tbsp sugar</td><td class="blank lane"></td></tr>
+    <tr><td class="ing or">15 oz all-purpose flour</td><td class="prep ol or">weigh</td><td rowspan="7">whisk until even</td><td class="t3" rowspan="7">seal in a 2-quart jar; shake before use</td></tr>
+    <tr><td class="ing or">7½ oz whole wheat flour</td><td class="prep ol or">weigh</td></tr>
+    <tr><td class="ing or">7½ oz buckwheat flour</td><td class="prep ol or">weigh</td></tr>
+    <tr><td class="ing or">1 Tbsp baking powder</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1½ tsp baking soda</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 Tbsp kosher salt</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">3 Tbsp sugar</td><td class="blank ol or"></td></tr>
   </table>
   </div>
 

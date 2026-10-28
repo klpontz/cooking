@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -82,15 +81,15 @@
   <div class="recipe-table-wrap">
   <table class="recipe-table">
     <tr><td class="setup" colspan="9">Preheat the waffle iron on low</td></tr>
-    <tr><td class="ing">300 g mix</td><td class="blank lane" colspan="5"></td><td class="t2" rowspan="7">fold together; leave lumpy</td><td class="t2" rowspan="8">cook in a greased iron, 8–10 min</td><td class="t3" rowspan="9">keep warm at 200°F; serve with syrup</td></tr>
-    <tr><td class="ing">2 egg yolks</td><td class="blank lane"></td><td rowspan="3">whisk smooth</td><td rowspan="4">drizzle in, whisking</td><td class="t1" rowspan="5">fold in</td><td class="t1" rowspan="6">fold in</td></tr>
-    <tr><td class="ing">1½ cups buttermilk</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 tsp vanilla</td><td class="blank lane"></td></tr>
+    <tr><td class="ing or">2 egg yolks</td><td class="blank ol or"></td><td rowspan="3">whisk smooth</td><td rowspan="4">drizzle in, whisking</td><td rowspan="5">fold in</td><td rowspan="6">fold in</td><td rowspan="7">fold together; leave lumpy</td><td rowspan="8">cook in a greased iron, 8–10 min</td><td class="t3" rowspan="9">keep warm at 200°F; serve with syrup</td></tr>
+    <tr><td class="ing or">1½ cups buttermilk</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 tsp vanilla</td><td class="blank ol or"></td></tr>
     <tr><td class="ing">4 Tbsp butter</td><td colspan="2">melt</td></tr>
     <tr><td class="ing">2 egg whites</td><td colspan="3">whip to stiff peaks</td></tr>
-    <tr><td class="ing">1 cup club soda</td><td class="t1" colspan="4">ice-cold</td></tr>
-    <tr><td class="ing">butter or oil, for the iron</td><td class="blank lane" colspan="6"></td></tr>
-    <tr><td class="ing">maple syrup</td><td class="blank lane" colspan="7"></td></tr>
+    <tr><td class="ing">1 cup club soda</td><td colspan="4">keep ice-cold</td></tr>
+    <tr><td class="ing or">300 g mix</td><td class="prep ol or" colspan="5">weigh 300 g</td></tr>
+    <tr><td class="ing or">butter or oil, for the iron</td><td class="blank ol or" colspan="6"></td></tr>
+    <tr><td class="ing or">maple syrup</td><td class="blank ol or" colspan="7"></td></tr>
   </table>
   </div>
 

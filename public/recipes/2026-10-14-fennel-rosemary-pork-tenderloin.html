@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -87,12 +86,12 @@
   <table class="recipe-table">
     <tr><td class="setup" colspan="8">Heat oven to 425°F</td></tr>
     <tr>
-      <td class="ing">1 pork tenderloin (1–1¼ lb)</td>
-      <td colspan="2">trim silverskin</td>
-      <td class="t1" rowspan="8">rub over pork</td>
-      <td class="t1" rowspan="9">sear 6–8 min, all sides</td>
-      <td class="t2" rowspan="9">roast to 140°F, 8–12 min</td>
-      <td class="t2" rowspan="9">rest 5 min, slice ½ in</td>
+      <td class="ing or">1 pork tenderloin (1–1¼ lb)</td>
+      <td class="prep ol or" colspan="2">trim silverskin</td>
+      <td rowspan="8">rub over pork</td>
+      <td rowspan="9">sear 6–8 min, all sides</td>
+      <td rowspan="9">roast to 140°F, 8–12 min</td>
+      <td rowspan="9">rest 5 min, slice ½ in</td>
       <td class="t3" rowspan="12">spoon on juices, scatter sage</td>
     </tr>
     <tr>
@@ -100,24 +99,24 @@
       <td>toast, crush</td>
       <td rowspan="7">mix into paste</td>
     </tr>
-    <tr><td class="ing">1 Tbsp fresh rosemary, finely chopped</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 tsp fresh thyme leaves</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">½ tsp chili flakes</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 tsp kosher salt</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">black pepper</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 Tbsp olive oil</td><td class="blank lane"></td></tr>
+    <tr><td class="ing or">1 Tbsp fresh rosemary, finely chopped</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 tsp fresh thyme leaves</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">½ tsp chili flakes</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 tsp kosher salt</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">black pepper</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 Tbsp olive oil</td><td class="blank ol or"></td></tr>
     <tr>
       <td class="ing">2 Tbsp olive oil</td>
-      <td class="t1" colspan="3">heat in cast iron until shimmering</td>
+      <td colspan="3">heat in cast iron until shimmering</td>
     </tr>
     <tr class="group">
-      <td class="ing">1 Tbsp olive oil</td>
-      <td class="t2" colspan="6" rowspan="2">fry in the pork pan until crisp, 30 sec</td>
+      <td class="ing or">1 Tbsp olive oil</td>
+      <td colspan="6" rowspan="2">fry in the pork pan until crisp, 30 sec</td>
     </tr>
-    <tr><td class="ing">8–10 fresh sage leaves</td></tr>
+    <tr><td class="ing or">8–10 fresh sage leaves</td></tr>
     <tr class="group">
       <td class="ing">¼ cup dry white wine</td>
-      <td class="t2" colspan="6">deglaze the pan, simmer 1 min, add resting juices</td>
+      <td colspan="6">deglaze the pan, simmer 1 min, add resting juices</td>
     </tr>
   </table>
   </div>

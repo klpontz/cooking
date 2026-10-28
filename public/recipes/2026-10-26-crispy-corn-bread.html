@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -84,14 +83,14 @@
   <div class="recipe-table-wrap">
   <table class="recipe-table">
     <tr><td class="setup" colspan="6">Heat the oven to 450°F</td></tr>
-    <tr><td class="ing">1 Tbsp lard</td><td class="t1" colspan="3">grease a 12-in skillet; heat in the oven until smoking</td><td class="t2" rowspan="9">swirl fat, pour in batter; bake 15 min</td><td class="t3" rowspan="9">cut 6 wedges, serve hot</td></tr>
-    <tr><td class="ing">1½ cups cornmeal</td><td rowspan="5">sift together</td><td rowspan="7">mix thoroughly</td><td class="t1" rowspan="8">whisk in</td></tr>
-    <tr><td class="ing">1 tsp baking powder</td></tr>
-    <tr><td class="ing">1 tsp baking soda</td></tr>
-    <tr><td class="ing">½ tsp salt</td></tr>
-    <tr><td class="ing">1 tsp sugar</td></tr>
-    <tr><td class="ing">1 large egg</td><td rowspan="2">whisk frothy, whisk in buttermilk</td></tr>
-    <tr><td class="ing">1½ cups buttermilk</td></tr>
+    <tr><td class="ing">1 Tbsp lard</td><td colspan="3">grease a 12-in skillet; heat in the oven until smoking</td><td rowspan="9">swirl fat, pour in batter; bake 15 min</td><td class="t3" rowspan="9">cut 6 wedges, serve hot</td></tr>
+    <tr><td class="ing or">1½ cups cornmeal</td><td rowspan="5">sift together</td><td rowspan="7">mix thoroughly</td><td rowspan="8">whisk in</td></tr>
+    <tr><td class="ing or">1 tsp baking powder</td></tr>
+    <tr><td class="ing or">1 tsp baking soda</td></tr>
+    <tr><td class="ing or">½ tsp salt</td></tr>
+    <tr><td class="ing or">1 tsp sugar</td></tr>
+    <tr><td class="ing or">1 large egg</td><td rowspan="2">whisk frothy, whisk in buttermilk</td></tr>
+    <tr><td class="ing or">1½ cups buttermilk</td></tr>
     <tr><td class="ing">2 Tbsp butter</td><td colspan="2">melt over low</td></tr>
   </table>
   </div>

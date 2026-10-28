@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -91,20 +90,20 @@
   <div class="recipe-table-wrap">
   <table class="recipe-table">
     <tr><td class="setup" colspan="9">Heat the oven to 300°F</td></tr>
-    <tr><td class="ing">1 lb Jackson Wonder beans</td><td class="t1" colspan="4">rinse, sort, soak overnight; drain</td><td class="t1" rowspan="13">add; on the stove, bring almost to a boil; cover, into the oven</td><td class="t2" rowspan="13">bake 30 min; pull the kombu</td><td class="t2" rowspan="14">bake until tender, 1–1½ h more; salt and MSG halfway</td><td class="t3" rowspan="14">pull chiles, bay, shiitake; chop shiitake, stir back; salt and MSG to taste; rest 15 min</td></tr>
-    <tr><td class="ing">1 heaping Tbsp bacon fat</td><td class="blank lane"></td><td rowspan="2">melt over medium; cook shallots soft, 5 min</td><td rowspan="5">add each in turn; cook soft</td><td class="t1" rowspan="9">add; cook 1 min</td></tr>
-    <tr><td class="ing">½ cup shallots</td><td>mince</td></tr>
-    <tr><td class="ing">collard ribs, 1 bunch</td><td colspan="2">strip; mince small</td></tr>
-    <tr><td class="ing">2 celery ribs</td><td colspan="2">mince small</td></tr>
-    <tr><td class="ing">3 small carrots</td><td colspan="2">mince small</td></tr>
-    <tr><td class="ing">3 garlic cloves</td><td colspan="3">mince</td></tr>
-    <tr><td class="ing">2 dried chiles</td><td class="blank lane" colspan="3"></td></tr>
-    <tr><td class="ing">1 tsp bean seasoning</td><td class="blank lane" colspan="3"></td></tr>
-    <tr><td class="ing">2 California bay leaves</td><td class="blank lane" colspan="3"></td></tr>
-    <tr><td class="ing">water, to cover by 1 in</td><td class="blank lane" colspan="4"></td></tr>
-    <tr><td class="ing">2 dried shiitake</td><td class="blank lane" colspan="4"></td></tr>
-    <tr><td class="ing">2 pieces kombu</td><td class="blank lane" colspan="4"></td></tr>
-    <tr><td class="ing">kosher salt and MSG</td><td class="blank lane" colspan="6"></td></tr>
+    <tr><td class="ing or">1 heaping Tbsp bacon fat</td><td class="blank ol or"></td><td rowspan="2">melt over medium; cook shallots soft, 5 min</td><td rowspan="5">add each in turn; cook soft</td><td rowspan="9">add; cook 1 min</td><td rowspan="13">add; on the stove, bring almost to a boil; cover, into the oven</td><td rowspan="13">bake 30 min; pull the kombu</td><td rowspan="14">bake until tender, 1–1½ h more; salt and MSG halfway</td><td class="t3" rowspan="14">pull chiles, bay, shiitake; chop shiitake, stir back; salt and MSG to taste; rest 15 min</td></tr>
+    <tr><td class="ing or">½ cup shallots</td><td class="prep ol or">mince</td></tr>
+    <tr><td class="ing or">collard ribs, 1 bunch</td><td class="prep ol or" colspan="2">strip; mince small</td></tr>
+    <tr><td class="ing or">2 celery ribs</td><td class="prep ol or" colspan="2">mince small</td></tr>
+    <tr><td class="ing or">3 small carrots</td><td class="prep ol or" colspan="2">mince small</td></tr>
+    <tr><td class="ing or">3 garlic cloves</td><td class="prep ol or" colspan="3">mince</td></tr>
+    <tr><td class="ing or">2 dried chiles</td><td class="blank ol or" colspan="3"></td></tr>
+    <tr><td class="ing or">1 tsp bean seasoning</td><td class="blank ol or" colspan="3"></td></tr>
+    <tr><td class="ing or">2 California bay leaves</td><td class="blank ol or" colspan="3"></td></tr>
+    <tr><td class="ing or">1 lb Jackson Wonder beans</td><td class="prep ol or" colspan="4">rinse, sort, soak overnight; drain</td></tr>
+    <tr><td class="ing or">water, to cover by 1 in</td><td class="blank ol or" colspan="4"></td></tr>
+    <tr><td class="ing or">2 dried shiitake</td><td class="blank ol or" colspan="4"></td></tr>
+    <tr><td class="ing or">2 pieces kombu</td><td class="blank ol or" colspan="4"></td></tr>
+    <tr><td class="ing or">kosher salt and MSG</td><td class="blank ol or" colspan="6"></td></tr>
   </table>
   </div>
 

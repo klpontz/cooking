@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -91,25 +90,25 @@
   <h2>At a Glance</h2>
   <div class="recipe-table-wrap">
   <table class="recipe-table">
-    <tr><td class="ing">3–4 boneless, skinless chicken thighs</td><td>trim fat, save it</td><td rowspan="6">toss, marinate</td><td class="blank" colspan="3" rowspan="6"></td><td class="t2" rowspan="14">lay chicken on rice, pour marinade over</td><td class="t2" rowspan="14">High 4 min, natural release 10 min; check 175–190°F</td><td class="t3" rowspan="19">rest chicken 5 min, fluff rice, slice; serve with sauce and garnishes</td></tr>
-    <tr><td class="ing">1 Tbsp Shaoxing wine</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">2 tsp light soy sauce</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 tsp toasted sesame oil</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">½ tsp white pepper</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">½ tsp kosher salt</td><td class="blank lane"></td></tr>
-    <tr class="group"><td class="ing">1½ cups jasmine rice</td><td colspan="3">rinse until mostly clear, drain</td><td class="t1" rowspan="5">add rice, stir 1–2 min until glossy</td><td class="t1" rowspan="8">Sauté off; deglaze, scrape clean, level rice</td></tr>
+    <tr><td class="ing or">3–4 boneless, skinless chicken thighs</td><td class="prep ol or">trim fat, save it</td><td rowspan="6">toss, marinate</td><td class="blank or" colspan="3" rowspan="6"></td><td rowspan="14">lay chicken on rice, pour marinade over</td><td rowspan="14">High 4 min, natural release 10 min; check 175–190°F</td><td class="t3" rowspan="19">rest chicken 5 min, fluff rice, slice; serve with sauce and garnishes</td></tr>
+    <tr><td class="ing or">1 Tbsp Shaoxing wine</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">2 tsp light soy sauce</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 tsp toasted sesame oil</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">½ tsp white pepper</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">½ tsp kosher salt</td><td class="blank ol or"></td></tr>
+    <tr class="group"><td class="ing or">1½ cups jasmine rice</td><td class="prep ol or" colspan="3">rinse until mostly clear, drain</td><td rowspan="5">add rice, stir 1–2 min until glossy</td><td rowspan="8">Sauté off; deglaze, scrape clean, level rice</td></tr>
     <tr><td class="ing">trimmed thigh fat (or 2 Tbsp neutral oil)</td><td colspan="2">render on Sauté 4–5 min</td><td rowspan="4">sauté 1 min</td></tr>
-    <tr><td class="ing">1-inch ginger, sliced into coins</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">4 cloves garlic, minced</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">scallion whites, 2-inch pieces</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">1½ cups low-sodium chicken stock</td><td class="blank lane" colspan="4" rowspan="3"></td></tr>
-    <tr><td class="ing">4 dried shiitake, crumbled (optional)</td></tr>
-    <tr><td class="ing">½ tsp kosher salt</td></tr>
-    <tr class="group"><td class="ing">1-inch ginger, finely grated</td><td rowspan="3">combine in a heatproof bowl</td><td rowspan="4">pour hot oil over</td><td class="blank" colspan="5" rowspan="4"></td></tr>
-    <tr><td class="ing">scallion greens, thinly sliced</td></tr>
-    <tr><td class="ing">½ tsp kosher salt</td></tr>
+    <tr><td class="ing or">1-inch ginger, sliced into coins</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">4 cloves garlic, minced</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">scallion whites, 2-inch pieces</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">1½ cups low-sodium chicken stock</td><td class="blank ol or" colspan="4" rowspan="3"></td></tr>
+    <tr><td class="ing or">4 dried shiitake, crumbled (optional)</td></tr>
+    <tr><td class="ing or">½ tsp kosher salt</td></tr>
+    <tr class="group"><td class="ing or">1-inch ginger, finely grated</td><td rowspan="3">combine in a heatproof bowl</td><td rowspan="4">pour hot oil over</td><td class="blank or" colspan="5" rowspan="4"></td></tr>
+    <tr><td class="ing or">scallion greens, thinly sliced</td></tr>
+    <tr><td class="ing or">½ tsp kosher salt</td></tr>
     <tr><td class="ing">⅓ cup neutral oil</td><td>heat until shimmering</td></tr>
-    <tr class="group"><td class="ing">cucumber, cilantro, chili crisp</td><td class="blank lane" colspan="7"></td></tr>
+    <tr class="group"><td class="ing or">cucumber, cilantro, chili crisp</td><td class="blank ol or" colspan="7"></td></tr>
   </table>
   </div>
 

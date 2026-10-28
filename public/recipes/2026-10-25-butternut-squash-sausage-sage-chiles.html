@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -91,20 +90,20 @@
   <h2>At a Glance</h2>
   <div class="recipe-table-wrap">
   <table class="recipe-table">
-    <tr><td class="ing">1 lb butternut squash</td><td>halve, seed</td><td rowspan="3">oil, salt; roast 450°F 20 min, then 325°F 20–40 min</td><td class="t1" colspan="3" rowspan="3">puree smooth; use 1 cup</td><td class="t2" rowspan="11">stir in puree; off heat</td><td class="t2" rowspan="12">add pasta; toss with splashes of water</td><td class="t3" rowspan="14">very low heat; toss to emulsify; top with sage, serve</td></tr>
-    <tr><td class="ing">olive oil</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">kosher salt</td><td class="blank lane"></td></tr>
-    <tr class="group"><td class="ing">6 oz Italian sausage</td><td>shape a patty</td><td rowspan="2">sear hard, 5 min</td><td rowspan="4">flip, add garlic and sage; pull sage when crisp; 2–3 min</td><td class="t1" rowspan="6">add, cook a few seconds</td><td class="t1" rowspan="8">add ½ cup pasta water, reduce by half</td></tr>
-    <tr><td class="ing">glug of olive oil</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">3 garlic cloves</td><td colspan="2">smash</td></tr>
-    <tr><td class="ing">8–10 sage leaves</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">1 tsp Calabrian chiles</td><td colspan="3">seed, slice thin</td></tr>
-    <tr><td class="ing">black pepper</td><td class="blank lane" colspan="3"></td></tr>
-    <tr><td class="ing">1 gallon water</td><td class="blank lane"></td><td class="t1" colspan="3" rowspan="2">cover, bring to a boil</td></tr>
-    <tr><td class="ing">4 Tbsp kosher salt</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">8 oz pasta</td><td class="t2" colspan="6">boil 2 min less than package time</td></tr>
-    <tr><td class="ing">¼ cup 50/50 cheese</td><td class="t2" colspan="7">grate fine</td></tr>
-    <tr><td class="ing">2 Tbsp butter</td><td class="blank lane" colspan="7"></td></tr>
+    <tr><td class="ing or">1 lb butternut squash</td><td class="prep ol or">halve, seed</td><td rowspan="3">oil, salt; roast 450°F 20 min, then 325°F 20–40 min</td><td colspan="3" rowspan="3">puree smooth; use 1 cup</td><td rowspan="11">stir in puree; off heat</td><td rowspan="12">add pasta; toss with splashes of water</td><td class="t3" rowspan="14">very low heat; toss to emulsify; top with sage, serve</td></tr>
+    <tr><td class="ing or">olive oil</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">kosher salt</td><td class="blank ol or"></td></tr>
+    <tr class="group"><td class="ing">6 oz Italian sausage</td><td>shape a patty</td><td rowspan="2">sear hard, 5 min</td><td rowspan="4">flip, add garlic and sage; pull sage when crisp; 2–3 min</td><td rowspan="6">add, cook a few seconds</td><td rowspan="8">add ½ cup pasta water, reduce by half</td></tr>
+    <tr><td class="ing or">glug of olive oil</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">3 garlic cloves</td><td class="prep ol or" colspan="2">smash</td></tr>
+    <tr><td class="ing or">8–10 sage leaves</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">1 tsp Calabrian chiles</td><td class="prep ol or" colspan="3">seed, slice thin</td></tr>
+    <tr><td class="ing or">black pepper</td><td class="blank ol or" colspan="3"></td></tr>
+    <tr><td class="ing or">1 gallon water</td><td class="blank ol or"></td><td colspan="3" rowspan="2">cover, bring to a boil</td></tr>
+    <tr><td class="ing or">4 Tbsp kosher salt</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing">8 oz pasta</td><td colspan="6">boil 2 min less than package time</td></tr>
+    <tr><td class="ing or">¼ cup 50/50 cheese</td><td class="prep ol or" colspan="7">grate fine</td></tr>
+    <tr><td class="ing or">2 Tbsp butter</td><td class="blank ol or" colspan="7"></td></tr>
   </table>
   </div>
 

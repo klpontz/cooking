@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -79,13 +78,13 @@
   <h2>At a Glance</h2>
   <div class="recipe-table-wrap">
   <table class="recipe-table">
-    <tr><td class="ing">¼ cup extra-virgin olive oil</td><td class="blank lane"></td><td rowspan="2">warm over medium, brown garlic 3 min</td><td class="t1" rowspan="3">mash in until dissolved</td><td class="t1" rowspan="5">cook 5 min</td><td class="t2" rowspan="6">stir to coat</td><td class="t3" rowspan="7">season, serve at room temperature</td></tr>
-    <tr><td class="ing">1 garlic clove</td><td>peel</td></tr>
-    <tr><td class="ing">3 salt-packed anchovies</td><td colspan="2">rinse, fillet, chop</td></tr>
-    <tr><td class="ing">15 flat-leaf parsley sprigs</td><td class="t1" colspan="3">chop leaves fine</td></tr>
-    <tr><td class="ing">2 Tbsp red wine vinegar</td><td class="blank lane" colspan="3"></td></tr>
-    <tr><td class="ing">2 cups cooked Occhio della Capra, borlotti, or cranberry beans</td><td class="t1" colspan="4">drain</td></tr>
-    <tr><td class="ing">salt and black pepper</td><td class="blank lane" colspan="5"></td></tr>
+    <tr><td class="ing or">¼ cup extra-virgin olive oil</td><td class="blank ol or"></td><td rowspan="2">warm over medium, brown garlic 3 min</td><td rowspan="3">mash in until dissolved</td><td rowspan="5">cook 5 min</td><td rowspan="6">stir to coat</td><td class="t3" rowspan="7">season, serve at room temperature</td></tr>
+    <tr><td class="ing or">1 garlic clove</td><td class="prep ol or">peel</td></tr>
+    <tr><td class="ing or">3 salt-packed anchovies</td><td class="prep ol or" colspan="2">rinse, fillet, chop</td></tr>
+    <tr><td class="ing or">15 flat-leaf parsley sprigs</td><td class="prep ol or" colspan="3">chop leaves fine</td></tr>
+    <tr><td class="ing or">2 Tbsp red wine vinegar</td><td class="blank ol or" colspan="3"></td></tr>
+    <tr><td class="ing or">2 cups cooked Occhio della Capra, borlotti, or cranberry beans</td><td class="prep ol or" colspan="4">drain</td></tr>
+    <tr><td class="ing or">salt and black pepper</td><td class="blank ol or" colspan="5"></td></tr>
   </table>
   </div>
 

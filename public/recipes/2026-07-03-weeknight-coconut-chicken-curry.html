@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -85,20 +84,20 @@
   <h2>At a Glance</h2>
   <div class="recipe-table-wrap">
   <table class="recipe-table">
-    <tr><td class="ing">1 Tbsp neutral oil</td><td rowspan="2">fry 1–2 min until it darkens</td><td rowspan="4">add, 30 sec</td><td rowspan="5">fry until the fat splits, 2–3 min</td><td class="t1" rowspan="6">push paste aside, brown chicken 3–4 min</td><td class="t1" rowspan="10">simmer 10 min</td><td class="t2" rowspan="12">simmer 5–7 min until chicken is done</td><td class="t2" rowspan="13">off heat, add lime, taste and adjust</td><td class="t3" rowspan="14">serve over rice, top with herbs and chili</td></tr>
-    <tr><td class="ing">3 Tbsp Thai red curry paste</td></tr>
-    <tr><td class="ing">4 cloves garlic, minced</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 Tbsp fresh ginger, grated</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">coconut cream from the top of the can</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">1.5 lb boneless chicken thighs</td><td colspan="3">cut bite-size</td></tr>
-    <tr><td class="ing">rest of the coconut milk</td><td class="blank lane" colspan="4" rowspan="4"></td></tr>
-    <tr><td class="ing">1 cup chicken stock</td></tr>
-    <tr><td class="ing">1.5 Tbsp fish sauce</td></tr>
-    <tr><td class="ing">1 tsp brown sugar</td></tr>
-    <tr><td class="ing">1 red bell pepper</td><td class="t1" colspan="5" rowspan="2">slice</td></tr>
-    <tr><td class="ing">1 medium onion</td></tr>
-    <tr><td class="ing">½ lime</td><td class="t2" colspan="6">juice</td></tr>
-    <tr class="group"><td class="ing">basil or cilantro, sliced chili, jasmine rice, lime wedges</td><td class="blank lane" colspan="7"></td></tr>
+    <tr><td class="ing or">1 Tbsp neutral oil</td><td rowspan="2">fry 1–2 min until it darkens</td><td rowspan="4">add, 30 sec</td><td rowspan="5">fry until the fat splits, 2–3 min</td><td rowspan="6">push paste aside, brown chicken 3–4 min</td><td rowspan="10">simmer 10 min</td><td rowspan="12">simmer 5–7 min until chicken is done</td><td rowspan="13">off heat, add lime, taste and adjust</td><td class="t3" rowspan="14">serve over rice, top with herbs and chili</td></tr>
+    <tr><td class="ing or">3 Tbsp Thai red curry paste</td></tr>
+    <tr><td class="ing or">4 cloves garlic, minced</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 Tbsp fresh ginger, grated</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">coconut cream from the top of the can</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">1.5 lb boneless chicken thighs</td><td class="prep ol or" colspan="3">cut bite-size</td></tr>
+    <tr><td class="ing or">rest of the coconut milk</td><td class="blank ol or" colspan="4" rowspan="4"></td></tr>
+    <tr><td class="ing or">1 cup chicken stock</td></tr>
+    <tr><td class="ing or">1.5 Tbsp fish sauce</td></tr>
+    <tr><td class="ing or">1 tsp brown sugar</td></tr>
+    <tr><td class="ing or">1 red bell pepper</td><td class="prep ol or" colspan="5">slice</td></tr>
+    <tr><td class="ing or">1 medium onion</td><td class="prep ol or" colspan="5">slice</td></tr>
+    <tr><td class="ing or">½ lime</td><td class="prep ol or" colspan="6">juice</td></tr>
+    <tr class="group"><td class="ing or">basil or cilantro, sliced chili, jasmine rice, lime wedges</td><td class="blank ol or" colspan="7"></td></tr>
   </table>
   </div>
 

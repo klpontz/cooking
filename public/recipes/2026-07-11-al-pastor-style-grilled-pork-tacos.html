@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -94,27 +93,27 @@
   <h2>At a Glance</h2>
   <div class="recipe-table-wrap">
   <table class="recipe-table">
-    <tr><td class="ing">6–7 lb boneless pork shoulder</td><td colspan="2">trim, butterfly, pound to ¾ in</td><td class="t1" rowspan="12">coat, bag, freeze; thaw over 2–3 nights</td><td class="t1" rowspan="12">grill over direct heat 6–8 min per side to 145–150°F</td><td class="t2" rowspan="12">rest 5 min</td><td class="t2" rowspan="14">chop together on the board</td><td class="t3" rowspan="21">build tacos; pass salsas at the table</td></tr>
-    <tr><td class="ing">6 dried guajillo chiles</td><td rowspan="2">toast 30 sec, soak 15 min, drain</td><td rowspan="11">blend into a smooth adobo</td></tr>
-    <tr><td class="ing">3 dried ancho chiles</td></tr>
+    <tr><td class="ing or">6–7 lb boneless pork shoulder</td><td class="prep ol or" colspan="2">trim, butterfly, pound to ¾ in</td><td rowspan="12">coat, bag, freeze; thaw over 2–3 nights</td><td rowspan="12">grill over direct heat 6–8 min per side to 145–150°F</td><td rowspan="12">rest 5 min</td><td rowspan="14">chop together on the board</td><td class="t3" rowspan="21">build tacos; pass salsas at the table</td></tr>
+    <tr><td class="ing or">6 dried guajillo chiles</td><td rowspan="2">toast 30 sec, soak 15 min, drain</td><td rowspan="11">blend into a smooth adobo</td></tr>
+    <tr><td class="ing or">3 dried ancho chiles</td></tr>
     <tr><td class="ing">1 cup pineapple juice</td><td>simmer 3–4 min</td></tr>
-    <tr><td class="ing">3 oz achiote paste</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">8 cloves garlic</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 orange, juiced and zested</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">⅓ cup apple cider vinegar</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">2 tsp ground cumin</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 Tbsp Mexican oregano</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">1 Tbsp kosher salt</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">pinch ground clove (optional)</td><td class="blank lane"></td></tr>
-    <tr class="group"><td class="ing">1 fresh pineapple</td><td class="t1" colspan="3">cut into thick rings</td><td class="t1" rowspan="2">char until marked and soft</td><td class="blank" rowspan="2"></td></tr>
-    <tr><td class="ing">1 white onion</td><td class="t1" colspan="3">halve</td></tr>
-    <tr class="group"><td class="ing">40–45 corn tortillas</td><td class="t2" colspan="6">warm, double up</td></tr>
-    <tr><td class="ing">1 white onion</td><td class="t2" colspan="6">dice fine</td></tr>
-    <tr><td class="ing">1 bunch cilantro</td><td class="t2" colspan="6">chop</td></tr>
-    <tr><td class="ing">cotija or queso fresco</td><td class="t2" colspan="6">crumble</td></tr>
-    <tr><td class="ing">4 limes</td><td class="t2" colspan="6">cut into wedges</td></tr>
-    <tr class="group"><td class="ing">salsa verde</td><td class="blank lane" colspan="6" rowspan="2"></td></tr>
-    <tr><td class="ing">chile de árbol or chipotle salsa (adults)</td></tr>
+    <tr><td class="ing or">3 oz achiote paste</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">8 cloves garlic</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 orange, juiced and zested</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">⅓ cup apple cider vinegar</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">2 tsp ground cumin</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 Tbsp Mexican oregano</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1 Tbsp kosher salt</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">pinch ground clove (optional)</td><td class="blank ol or"></td></tr>
+    <tr class="group"><td class="ing or">1 fresh pineapple</td><td class="prep ol or" colspan="3">cut into thick rings</td><td rowspan="2">char until marked and soft</td><td class="blank or" rowspan="2"></td></tr>
+    <tr><td class="ing or">1 white onion</td><td class="prep ol or" colspan="3">halve</td></tr>
+    <tr class="group"><td class="ing">40–45 corn tortillas</td><td colspan="6">warm, double up</td></tr>
+    <tr><td class="ing or">1 white onion</td><td class="prep ol or" colspan="6">dice fine</td></tr>
+    <tr><td class="ing or">1 bunch cilantro</td><td class="prep ol or" colspan="6">chop</td></tr>
+    <tr><td class="ing or">cotija or queso fresco</td><td class="prep ol or" colspan="6">crumble</td></tr>
+    <tr><td class="ing or">4 limes</td><td class="prep ol or" colspan="6">cut into wedges</td></tr>
+    <tr class="group"><td class="ing or">salsa verde</td><td class="blank ol or" colspan="6" rowspan="2"></td></tr>
+    <tr><td class="ing or">chile de árbol or chipotle salsa (adults)</td></tr>
   </table>
   </div>
 

@@ -42,13 +42,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -82,14 +81,14 @@
   <div class="recipe-table-wrap">
   <table class="recipe-table">
     <tr><td class="setup" colspan="8">Heat cast iron over a hot fire until very hot</td></tr>
-    <tr><td class="ing">2 lb boneless pork butt, butterflied</td><td>pound to ¾ in</td><td rowspan="2">season both sides</td><td class="t1" rowspan="5">spread paste on both sides</td><td class="t1" rowspan="6">sear undisturbed, 10 min</td><td class="t2" rowspan="6">flip, cook in butter 5–7 min</td><td class="t2" rowspan="6">rest 5 min, slice</td><td class="t3" rowspan="8">serve together</td></tr>
-    <tr><td class="ing">kosher salt and black pepper</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">8–10 cloves garlic, minced</td><td colspan="2" rowspan="3">mix into paste</td></tr>
-    <tr><td class="ing">2 Tbsp fresh rosemary, minced</td></tr>
-    <tr><td class="ing">6 Tbsp olive oil</td></tr>
-    <tr><td class="ing">2 Tbsp olive oil</td><td class="t1" colspan="3">brush hot pan, heat until nearly smoking</td></tr>
-    <tr class="group"><td class="ing">6 peaches</td><td class="t1" colspan="3">halve, pit</td><td class="t1" rowspan="2">lay around pork cut-side down, dot with butter, cook 5 min</td><td class="t2" colspan="2" rowspan="2">tent with foil</td></tr>
-    <tr><td class="ing">4 Tbsp butter</td><td class="t1" colspan="3">dice</td></tr>
+    <tr><td class="ing or">2 lb boneless pork butt, butterflied</td><td class="prep ol or">pound to ¾ in</td><td rowspan="2">season both sides</td><td rowspan="5">spread paste on both sides</td><td rowspan="6">sear undisturbed, 10 min</td><td rowspan="6">flip, cook in butter 5–7 min</td><td rowspan="6">rest 5 min, slice</td><td class="t3" rowspan="8">serve together</td></tr>
+    <tr><td class="ing or">kosher salt and black pepper</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">8–10 cloves garlic, minced</td><td colspan="2" rowspan="3">mix into paste</td></tr>
+    <tr><td class="ing or">2 Tbsp fresh rosemary, minced</td></tr>
+    <tr><td class="ing or">6 Tbsp olive oil</td></tr>
+    <tr><td class="ing">2 Tbsp olive oil</td><td colspan="3">brush hot pan, heat until nearly smoking</td></tr>
+    <tr class="group"><td class="ing or">6 peaches</td><td class="prep ol or" colspan="3">halve, pit</td><td rowspan="2">lay around pork cut-side down, dot with butter, cook 5 min</td><td colspan="2" rowspan="2">tent with foil</td></tr>
+    <tr><td class="ing or">4 Tbsp butter</td><td class="prep ol or" colspan="3">dice</td></tr>
   </table>
   </div>
 

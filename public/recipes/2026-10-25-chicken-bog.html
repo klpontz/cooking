@@ -41,13 +41,12 @@
     nav a:hover { text-decoration: underline; }
     .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
     .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
-    .recipe-table td { border: 1px solid var(--c400); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
     .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
-    .recipe-table td.ing, .recipe-table td.blank { border-top-color: var(--c200); border-bottom-color: var(--c200); }
-    .recipe-table td.lane { border-left-style: hidden; }
-    .recipe-table td.t1 { background: var(--c100); }
-    .recipe-table td.t2 { background: var(--c200); }
-    .recipe-table td.t3 { background: var(--c300); }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
   </style>
@@ -96,29 +95,29 @@
   <h2>At a Glance</h2>
   <div class="recipe-table-wrap">
   <table class="recipe-table">
-    <tr><td class="ing">1 Tbsp oil</td><td class="blank lane"></td><td rowspan="2">heat, toast chiles 30 sec a side</td><td rowspan="5">medium heat; add spices until seeds pop</td><td class="t1" rowspan="6">brown chicken 4–5 min a side</td><td class="t1" rowspan="8">brown 6 min; move all to a bowl</td><td class="t2" rowspan="9">deglaze, reduce by ¼, pour over meats</td><td class="t2" rowspan="19">combine; simmer covered, then 25 min uncovered</td><td class="t3" rowspan="23">pick chicken, simmer 15 min, season; serve over rice, garnish</td></tr>
-    <tr><td class="ing">2 dried red chiles</td><td>seed, flatten</td></tr>
-    <tr><td class="ing">1 tsp mustard seeds</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">1 cinnamon stick</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">3 cardamom pods</td><td class="blank lane" colspan="2"></td></tr>
-    <tr><td class="ing">4½–5 lb chicken</td><td colspan="3">quarter, skin</td></tr>
-    <tr><td class="ing">its giblets</td><td class="t1" colspan="4">chop fine</td></tr>
-    <tr><td class="ing">½ lb sweet Italian sausage</td><td class="t1" colspan="4">remove casings</td></tr>
-    <tr><td class="ing">1 cup red or white wine</td><td class="blank lane" colspan="5"></td></tr>
-    <tr><td class="ing">3 Tbsp butter</td><td class="blank lane"></td><td rowspan="2">melt, stir in flour 2 min</td><td rowspan="3">add onion, cook 5–10 min</td><td class="t2" colspan="3" rowspan="6">add, sauté 5 min</td></tr>
-    <tr><td class="ing">2 Tbsp flour</td><td class="blank lane"></td></tr>
-    <tr><td class="ing">2 cups yellow onion</td><td>chop</td><td class="blank"></td></tr>
-    <tr><td class="ing">1¾ cups celery</td><td>chop</td><td class="blank" colspan="2"></td></tr>
-    <tr><td class="ing">2 cups bell peppers</td><td>chop</td><td class="blank" colspan="2"></td></tr>
-    <tr><td class="ing">2 garlic cloves</td><td>mince</td><td class="blank" colspan="2"></td></tr>
-    <tr><td class="ing">28-oz can chopped tomatoes</td><td class="blank lane" colspan="6"></td></tr>
-    <tr><td class="ing">2 bunches collards</td><td class="t2" colspan="6">stem, cut 1-in strips</td></tr>
-    <tr><td class="ing">2 Tbsp fresh thyme</td><td class="t2" colspan="6">mince</td></tr>
-    <tr><td class="ing">2 cups chicken broth</td><td class="blank lane" colspan="6"></td></tr>
-    <tr><td class="ing">fish sauce, salt, pepper</td><td class="blank lane" colspan="7"></td></tr>
-    <tr class="group"><td class="ing">white rice</td><td class="t2" colspan="7">cook</td></tr>
-    <tr><td class="ing">½ cup parsley</td><td class="t2" colspan="7">chop</td></tr>
-    <tr><td class="ing">½ cup green onions</td><td class="t2" colspan="7">chop</td></tr>
+    <tr><td class="ing or">1 Tbsp oil</td><td class="blank ol or"></td><td rowspan="2">heat, toast chiles 30 sec a side</td><td rowspan="5">medium heat; add spices until seeds pop</td><td rowspan="6">brown chicken 4–5 min a side</td><td rowspan="8">brown 6 min; move all to a bowl</td><td rowspan="9">deglaze, reduce by ¼, pour over meats</td><td rowspan="19">combine; simmer covered, then 25 min uncovered</td><td class="t3" rowspan="23">pick chicken, simmer 15 min, season; serve over rice, garnish</td></tr>
+    <tr><td class="ing or">2 dried red chiles</td><td class="prep ol or">seed, flatten</td></tr>
+    <tr><td class="ing or">1 tsp mustard seeds</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">1 cinnamon stick</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">3 cardamom pods</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">4½–5 lb chicken</td><td class="prep ol or" colspan="3">quarter, skin</td></tr>
+    <tr><td class="ing or">its giblets</td><td class="prep ol or" colspan="4">chop fine</td></tr>
+    <tr><td class="ing or">½ lb sweet Italian sausage</td><td class="prep ol or" colspan="4">remove casings</td></tr>
+    <tr><td class="ing or">1 cup red or white wine</td><td class="blank ol or" colspan="5"></td></tr>
+    <tr class="group"><td class="ing or">3 Tbsp butter</td><td class="blank ol or"></td><td rowspan="2">melt, stir in flour 2 min</td><td rowspan="3">add onion, cook 5–10 min</td><td colspan="3" rowspan="6">add, sauté 5 min</td></tr>
+    <tr><td class="ing or">2 Tbsp flour</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">2 cups yellow onion</td><td class="prep ol or">chop</td><td class="blank ol or"></td></tr>
+    <tr><td class="ing or">1¾ cups celery</td><td class="prep ol or">chop</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">2 cups bell peppers</td><td class="prep ol or">chop</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">2 garlic cloves</td><td class="prep ol or">mince</td><td class="blank ol or" colspan="2"></td></tr>
+    <tr><td class="ing or">28-oz can chopped tomatoes</td><td class="blank ol or" colspan="6"></td></tr>
+    <tr><td class="ing or">2 bunches collards</td><td class="prep ol or" colspan="6">stem, cut 1-in strips</td></tr>
+    <tr><td class="ing or">2 Tbsp fresh thyme</td><td class="prep ol or" colspan="6">mince</td></tr>
+    <tr><td class="ing or">2 cups chicken broth</td><td class="blank ol or" colspan="6"></td></tr>
+    <tr><td class="ing or">fish sauce, salt, pepper</td><td class="blank ol or" colspan="7"></td></tr>
+    <tr class="group"><td class="ing">white rice</td><td colspan="7">cook</td></tr>
+    <tr><td class="ing or">½ cup parsley</td><td class="prep ol or" colspan="7">chop</td></tr>
+    <tr><td class="ing or">½ cup green onions</td><td class="prep ol or" colspan="7">chop</td></tr>
   </table>
   </div>
 
