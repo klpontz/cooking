@@ -9,8 +9,8 @@
 # file uploads every run, and nothing is ever deleted on the server.
 # If you remove a page from the repo, delete it on the server by hand.
 #
-# Only the public site uploads. CLAUDE.md, pantry/, log/, meta/, tools/
-# and overview.html are private notes and stay local.
+# Only the public site uploads. CLAUDE.md, pantry/, log/, meta/, tools/,
+# wiki/ and overview.html are private notes and stay local.
 #
 # Credentials live in .deploy.env (gitignored). It uses the same keys as
 # the kevinrocci.com repo, with REMOTE_DIR pointed at the cooking/
@@ -51,7 +51,7 @@ if [[ "$REMOTE_DIR" != */cooking ]]; then
   exit 1
 fi
 
-PAYLOAD=(index.html public wiki)
+PAYLOAD=(index.html public)
 
 for path in "${PAYLOAD[@]}"; do
   [[ -e "$path" ]] || { echo "error: missing $path" >&2; exit 1; }

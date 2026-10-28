@@ -84,6 +84,8 @@ Articles:
 
 Keep articles tight. Update rather than append. The wiki is for synthesis, not raw notes — those go in `log/`.
 
+The wiki is local only. It informs recipe building but is not deployed to the website.
+
 ## Recipe Publishing
 
 When Kevin says any of the following, invoke the `/recipe` skill immediately — no confirmation:
