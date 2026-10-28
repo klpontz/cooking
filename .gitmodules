@@ -1,0 +1,4 @@
+[submodule "tools/epicure-mcp"]
+	path = tools/epicure-mcp
+	url = https://github.com/klpontz/epicure-mcp.git
+	branch = cooking
