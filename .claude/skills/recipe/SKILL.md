@@ -92,6 +92,7 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
     h1 { font-size: 1.8rem; padding-bottom: 8px; margin-bottom: 0.3rem; background: linear-gradient(to right, var(--spark) 0 3rem, var(--c900) 3rem) left bottom / 100% 2px no-repeat; }
     .meta { font-size: 0.85rem; color: var(--c600); margin-bottom: 2rem; }
     h2 { font-size: 1.1rem; margin-top: 2rem; color: var(--c700); text-transform: uppercase; letter-spacing: 0.05em; }
+    h3 { font-size: 0.95rem; margin: 1.4rem 0 0.3rem; color: var(--c600); }
     ul, ol { padding-left: 1.4rem; }
     li { margin-bottom: 0.4rem; }
     .note { border-left: 3px solid var(--c200); padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: var(--c700); }
@@ -123,7 +124,7 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
       h3 { font-size: 10pt; margin: 0.6rem 0 0.2rem; break-after: avoid; }
       ul, ol { margin: 0.25rem 0; }
       li { margin-bottom: 0.15rem; break-inside: avoid; }
-      body > ul { column-count: 2; column-gap: 2rem; }
+      body > ul:has(> li:nth-child(7)) { column-count: 2; column-gap: 2rem; }
       .note { margin: 0.4rem 0; padding-left: 0.8rem; font-size: 9.5pt; }
       .note p { margin: 0 0 0.4rem; break-inside: avoid; }
       a { color: inherit; text-decoration: none; }
@@ -170,9 +171,27 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
 ## Rules
 
 - Fill every section from conversation context. Never output `{variable}` placeholders in the final HTML — replace them all with real content.
-- `{ingredients_as_li_items}`: each ingredient on its own `<li>` line, e.g. `<li>150g guanciale</li>`
+- `{ingredients_as_li_items}`: each ingredient on its own `<li>` line, e.g. `<li>150g guanciale</li>`. For a recipe with separate parts, replace the whole `<ul>` with grouped lists. See **Ingredient groups** below.
 - **Ingredient order is mandatory: list ingredients in the exact order they are first incorporated in the Method steps** — not by category, quantity, or importance. Walk the method top to bottom and record each ingredient the first time it's added; that sequence is the ingredient list order. Example: if garlic and ginger go into step 1, they come before the coconut milk added in step 2. Group items added together in the same step in the order the step names them. Finishing/garnish items (added off-heat or "to serve") go last.
 - **Before writing the file, run this check:** for each ingredient, note the step number where it first appears, and confirm those step numbers are non-decreasing down the ingredient list. If any ingredient is out of order, reorder the list before generating HTML.
+- **Ingredient groups.** Split the ingredient list into groups when the recipe has two or more parts made on their own track: a dressing, sauce, marinade, pickle, crust, filling, or topping. A recipe with one track keeps one flat list.
+  - Give each group an `<h3>` with a short Title Case name for the part, then its own `<ul>`:
+    ```html
+    <h3>Pickled Shallots</h3>
+    <ul>
+      <li>2 shallots, sliced into thin rings</li>
+    </ul>
+    <h3>Dressing</h3>
+    <ul>
+      <li>2 Tbsp citrus juice</li>
+    </ul>
+    ```
+  - Order the groups by when each part starts in the Method. Inside each group, the first-use order rule applies, and the check above runs group by group.
+  - Garnishes and finishing salt go in the group they finish, usually the main group (`Salad`, `Filling`). Use a separate `To Finish` group only when they finish more than one part.
+  - Drop "for the dressing" style tags. The heading says it. A divided ingredient appears in each group with that group's amount.
+  - A part that is its own recipe on the site is one linked line, e.g. `1 disk <a href="2006-10-08-butter-pie-crust-dough.html">Butter Pie Crust Dough</a>`, not a copy of its ingredients.
+  - In the Method, start the first step of each part with the group's name in bold: `<strong>Dressing.</strong>`.
+  - In the At a Glance table, each ingredient group is a table group (`<tr class="group">`), in the same order as the list.
 - `{method_as_li_items}`: each step on its own `<li>` line
 - `{technique_notes}`: the "why it works" reasoning as prose, not a restatement of steps
 - If serves is unknown, omit `&middot; Serves {serves}` from the `.meta` line
