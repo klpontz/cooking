@@ -109,6 +109,31 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
     .recipe-table td.t3 { background: var(--c200); }
     .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
     .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
+    /* print:start: paper layout. Screen view is unchanged. */
+    @page {
+      size: letter; margin: 0.6in 0.65in 0.7in;
+      @bottom-left { content: "kevinrocci.com/cooking"; font: 8pt Georgia, serif; color: var(--c600); }
+      @bottom-right { content: "page " counter(page) " of " counter(pages); font: 8pt Georgia, serif; color: var(--c600); }
+    }
+    @media print {
+      body { max-width: none; margin: 0; padding: 0; background: none; color: var(--c950); font-size: 10.5pt; line-height: 1.35; }
+      h1 { font-size: 18pt; margin: 0 0 0.2rem; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .meta { margin-bottom: 0.6rem; }
+      h2 { font-size: 10.5pt; margin: 1rem 0 0.35rem; break-after: avoid; }
+      h3 { font-size: 10pt; margin: 0.6rem 0 0.2rem; break-after: avoid; }
+      ul, ol { margin: 0.25rem 0; }
+      li { margin-bottom: 0.15rem; break-inside: avoid; }
+      body > ul { column-count: 2; column-gap: 2rem; }
+      .note { margin: 0.4rem 0; padding-left: 0.8rem; font-size: 9.5pt; }
+      .note p { margin: 0 0 0.4rem; break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      nav { display: none; }
+      .recipe-table-wrap { overflow: visible; break-inside: avoid; }
+      .recipe-table { font-size: 8pt; line-height: 1.2; }
+      .recipe-table td { padding: 2px 5px; }
+      .recipe-table td.t3, .recipe-table td.setup { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    /* print:end */
   </style>
 </head>
 <body>
@@ -153,6 +178,7 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
 - If serves is unknown, omit `&middot; Serves {serves}` from the `.meta` line
 - No confirmation step — generate, write, commit, push, deploy, post URL
 - `{table_rows}`: the `<tr>` rows of the At a Glance table. See the next section.
+- Keep the print block (`print:start` to `print:end`) in the template as it is. It lays the page out for paper: white background, two-column ingredients, no steps or tables split across pages, and a footer with page numbers.
 
 ## At a Glance Table
 
