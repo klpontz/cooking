@@ -1,0 +1,151 @@
+<!--
+  recipe: U.S. Senate Navy Bean Soup
+  date: 2026-11-22
+  serves: 8
+  cuisine: other
+  type: soup, weekend
+  course: mains
+  main-ingredient: navy beans
+  tags: other, soup, weekend, navy beans
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="recipe-tags" content="other, soup, weekend, navy beans">
+  <meta name="recipe-cuisine" content="other">
+  <meta name="recipe-type" content="soup, weekend">
+  <meta name="recipe-main-ingredient" content="navy beans">
+  <meta name="recipe-course" content="mains">
+  <title>U.S. Senate Navy Bean Soup</title>
+  <style>
+    /* Palette from kevinrocci.com/work (yellow-billed magpie).
+       c50–c950: one tinted scale on the hue of the wing blue (#1A5F92),
+       near-white to near-black. Every neutral comes from it. */
+    :root {
+      --c50: #F5FAFE; --c100: #EDF2F7; --c200: #DDE4EA; --c300: #C6CFD7;
+      --c400: #9FABB6; --c500: #768593; --c600: #576878; --c700: #404F5C;
+      --c800: #2B3741; --c900: #192229; --c950: #0E151B;
+      --accent: #1A5F92;  /* wing blue: links */
+      --spark: #F0AD1B;   /* eye ring: one mark on the title rule */
+    }
+    body { font-family: Georgia, serif; max-width: 680px; margin: 40px auto; padding: 0 20px; color: var(--c900); background: var(--c50); line-height: 1.7; }
+    h1 { font-size: 1.8rem; padding-bottom: 8px; margin-bottom: 0.3rem; background: linear-gradient(to right, var(--spark) 0 3rem, var(--c900) 3rem) left bottom / 100% 2px no-repeat; }
+    .meta { font-size: 0.85rem; color: var(--c600); margin-bottom: 2rem; }
+    h2 { font-size: 1.1rem; margin-top: 2rem; color: var(--c700); text-transform: uppercase; letter-spacing: 0.05em; }
+    h3 { font-size: 0.95rem; margin: 1.4rem 0 0.3rem; color: var(--c600); }
+    ul, ol { padding-left: 1.4rem; }
+    li { margin-bottom: 0.4rem; }
+    .note { border-left: 3px solid var(--c200); padding-left: 1rem; margin: 1.5rem 0; font-size: 0.95rem; color: var(--c700); }
+    a { color: var(--accent); }
+    nav { margin-top: 3rem; font-size: 0.85rem; }
+    nav a { color: var(--c600); text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    .recipe-table-wrap { overflow-x: auto; margin: 1rem 0 0; }
+    .recipe-table { border-collapse: collapse; border: 2px solid var(--c900); font-size: 0.85rem; line-height: 1.35; width: 100%; }
+    .recipe-table td { border: 1px solid var(--c300); padding: 6px; text-align: center; vertical-align: middle; }
+    .recipe-table td.ing { text-align: left; min-width: 7.5rem; }
+    .recipe-table td.ol { border-left-style: hidden; }
+    .recipe-table td.or { border-right-style: hidden; }
+    .recipe-table td.prep { text-align: left; }
+    .recipe-table td.t3 { background: var(--c200); }
+    .recipe-table td.setup { background: var(--c100); border-bottom: 2px solid var(--c900); }
+    .recipe-table tr.group > td { border-top: 2px solid var(--c900); }
+    /* print:start: paper layout. Screen view is unchanged. */
+    @page {
+      size: letter; margin: 0.6in 0.65in 0.7in;
+      @bottom-left { content: "kevinrocci.com/cooking"; font: 8pt Georgia, serif; color: var(--c600); }
+      @bottom-right { content: "page " counter(page) " of " counter(pages); font: 8pt Georgia, serif; color: var(--c600); }
+    }
+    @media print {
+      body { max-width: none; margin: 0; padding: 0; background: none; color: var(--c950); font-size: 10.5pt; line-height: 1.35; }
+      h1 { font-size: 18pt; margin: 0 0 0.2rem; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .meta { margin-bottom: 0.6rem; }
+      h2 { font-size: 10.5pt; margin: 1rem 0 0.35rem; break-after: avoid; }
+      h3 { font-size: 10pt; margin: 0.6rem 0 0.2rem; break-after: avoid; }
+      ul, ol { margin: 0.25rem 0; }
+      li { margin-bottom: 0.15rem; break-inside: avoid; }
+      body > ul:has(> li:nth-child(7)) { column-count: 2; column-gap: 2rem; }
+      .note { margin: 0.4rem 0; padding-left: 0.8rem; font-size: 9.5pt; }
+      .note p { margin: 0 0 0.4rem; break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      nav { display: none; }
+      .recipe-table-wrap { overflow: visible; break-inside: avoid; }
+      .recipe-table { font-size: 8pt; line-height: 1.2; }
+      .recipe-table td { padding: 2px 5px; }
+      .recipe-table td.t3, .recipe-table td.setup { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+    /* print:end */
+  </style>
+</head>
+<body>
+  <h1>U.S. Senate Navy Bean Soup</h1>
+  <p class="meta">2026-11-22 &middot; Serves 8</p>
+
+  <h2>Ingredients</h2>
+  <ul>
+    <li>3 Tbsp table salt (or 6 Tbsp Diamond Crystal kosher), for the brine</li>
+    <li>4 quarts cold water, for the brine</li>
+    <li>1 lb (2½ cups) dried navy beans, picked over and rinsed</li>
+    <li>2 Tbsp vegetable oil</li>
+    <li>1 lb ham steak, patted dry and cut into ½-inch pieces</li>
+    <li>1 onion, chopped</li>
+    <li>2 celery ribs, minced</li>
+    <li>6 garlic cloves, minced</li>
+    <li>2 tsp minced fresh thyme (or ½ tsp dried)</li>
+    <li>½ tsp black pepper</li>
+    <li>4 cups water</li>
+    <li>3 cups chicken broth</li>
+    <li>1 smoked ham hock, rinsed</li>
+    <li>2 bay leaves</li>
+    <li>3 carrots, peeled and cut into ½-inch pieces</li>
+    <li>1 tsp red wine vinegar, plus more to taste</li>
+    <li>Salt and black pepper, to taste</li>
+  </ul>
+
+  <h2>Method</h2>
+  <ol>
+    <li>Stir the brine salt into the 4 quarts of cold water until it dissolves. Add the beans and soak at room temperature for 8 to 24 hours. Drain and rinse well.</li>
+    <li>Set a rack in the lower-middle of the oven and heat it to 250°F. Heat the oil in a Dutch oven over medium heat until it just smokes. Brown the ham steak on all sides, about 5 minutes.</li>
+    <li>Add the onion and celery. Cook until soft, 5 to 7 minutes.</li>
+    <li>Add the garlic, thyme, and ½ tsp pepper. Cook until fragrant, about 30 seconds. Add the 4 cups water, broth, ham hock, bay leaves, and soaked beans. Bring to a boil, cover, and move the pot to the oven. Cook until the beans are almost tender, 45 minutes to 1 hour.</li>
+    <li>Stir in the carrots and 1 tsp vinegar. Cover and return to the oven until the beans and carrots are fully tender, 30 to 40 minutes more.</li>
+    <li>Take the pot out of the oven and remove the bay leaves. Move the ham hock to a cutting board and let it cool a little. Shred the meat with two forks and throw out the bone and skin. Return the meat to the pot and heat over medium until hot, about 2 minutes.</li>
+    <li>Off the heat, mash some of the beans against the side of the pot with the back of a spoon to thicken the soup. Taste before you add salt. Season with salt, pepper, and more vinegar as needed.</li>
+  </ol>
+
+  <h2>At a Glance</h2>
+  <div class="recipe-table-wrap">
+  <table class="recipe-table">
+    <tr><td class="setup" colspan="8">Oven at 250°F, rack in the lower-middle</td></tr>
+    <tr><td class="ing or">2 Tbsp vegetable oil</td><td class="blank ol or"></td><td rowspan="2">brown all sides, 5 min</td><td rowspan="4">soften 5–7 min</td><td rowspan="7">fragrant, 30 sec</td><td rowspan="12">boil, cover, oven 45–60 min</td><td rowspan="14">oven 30–40 min more</td><td class="t3" rowspan="15">shred hock meat back in, mash some beans, season</td></tr>
+    <tr><td class="ing or">1 lb ham steak</td><td class="prep ol or">pat dry, cut ½ in</td></tr>
+    <tr><td class="ing or">1 onion</td><td class="prep ol or" colspan="2">chop</td></tr>
+    <tr><td class="ing or">2 celery ribs</td><td class="prep ol or" colspan="2">mince</td></tr>
+    <tr><td class="ing or">6 garlic cloves</td><td class="prep ol or" colspan="3">mince</td></tr>
+    <tr><td class="ing or">2 tsp fresh thyme</td><td class="prep ol or" colspan="3">mince</td></tr>
+    <tr><td class="ing or">½ tsp black pepper</td><td class="blank ol or" colspan="3"></td></tr>
+    <tr><td class="ing or">1 lb dried navy beans</td><td class="prep ol or" colspan="4">soak in salted water 8–24 hr, drain, rinse</td></tr>
+    <tr><td class="ing or">4 cups water</td><td class="blank ol or" colspan="4"></td></tr>
+    <tr><td class="ing or">3 cups chicken broth</td><td class="blank ol or" colspan="4"></td></tr>
+    <tr><td class="ing or">1 smoked ham hock</td><td class="prep ol or" colspan="4">rinse</td></tr>
+    <tr><td class="ing or">2 bay leaves</td><td class="blank ol or" colspan="4"></td></tr>
+    <tr><td class="ing or">3 carrots</td><td class="prep ol or" colspan="5">peel, cut ½ in</td></tr>
+    <tr><td class="ing or">1 tsp red wine vinegar</td><td class="blank ol or" colspan="5"></td></tr>
+    <tr><td class="ing or">salt, pepper, more vinegar</td><td class="blank ol or" colspan="6"></td></tr>
+  </table>
+  </div>
+
+  <h2>Notes</h2>
+  <div class="note">
+    <p>Adapted from Adelaide Parker, America&rsquo;s Test Kitchen, <em>Best Soups and Stews from Around the World</em>. The Senate restaurant has served navy bean soup since about 1901. The original is just beans and ham hocks simmered in water. This version adds a browned ham steak, aromatics, and carrots.</p>
+    <p><strong>Why brine the beans:</strong> sodium in the soak water swaps into the bean skins and softens them, so they stretch instead of bursting as the insides swell. Rinsing afterward keeps the beans from tasting salty. <strong>Short on time:</strong> bring the beans, 4 quarts of water, and the brine salt to a boil, take the pot off the heat, and let it stand, covered, 1 hour. Drain and rinse.</p>
+    <p>The 250°F oven cooks the beans gently and evenly from all sides. A pot on the stove boils hard at the bottom, which splits beans and can scorch. In the oven they come out creamy and still whole.</p>
+    <p>Two kinds of ham do two jobs. The browned ham steak gives meaty chunks and a caramelized base for the onion and celery. The smoked hock gives smoke and body to the broth. Both are salty, which is why the liquid is part water and part broth, and why you taste before you salt.</p>
+    <p>The teaspoon of vinegar lifts the smoky, heavy flavors. Mashing some beans thickens the broth with no flour or cream. Fresh thyme from the garden works well here.</p>
+  </div>
+
+  <nav><a href="../../">← All recipes</a></nav>
+</body>
+</html>
