@@ -24,6 +24,7 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
    - `serves` — number of servings
    - `cuisine` — one of: italian, japanese, mexican, chinese, indian, thai, other
    - `type` — one or more of: pasta, braise, weeknight, weekend, bread, pizza, soup, salad, fermentation, other
+   - `course` — exactly one of: mains, sides, sauces, breakfast, baking, bases. It sets the landing-page section. Sauces covers dips, dressings, condiments, and ferments. Bases covers doughs, crusts, and mixes that other recipes use.
    - `main_ingredient` — primary ingredient, lowercase (e.g., "guanciale")
    - `tags` — comma-separated: cuisine + type + main_ingredient combined
 
@@ -31,11 +32,10 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
 
 3. Write the file to `public/recipes/{filename}` using the HTML template below. Fill every placeholder with real content — never leave `{recipe_name}` or any other `{variable}` in the output. Build the At a Glance table by following the **At a Glance Table** rules below.
 
-4. Add a new `<li>` entry to the Recipes section of `index.html` at the repo root:
-   ```html
-   <li><a href="public/recipes/{filename}">{recipe_name}</a><span class="meta">{date}</span></li>
+4. Rebuild `index.html`. Never edit it by hand. The script reads every page's meta tags, groups the pages by course, and lists the 5 newest under Recent. It stops if a page has no valid `recipe-course`:
+   ```bash
+   python3 .claude/skills/recipe/build_index.py
    ```
-   Insert it at the top of the existing list (most recent first).
 
 5. Shade and check the table, then commit and deploy. Fix any table error before going on:
    ```bash
@@ -64,6 +64,7 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
   serves: {serves}
   cuisine: {cuisine}
   type: {type}
+  course: {course}
   main-ingredient: {main_ingredient}
   tags: {tags}
 -->
@@ -76,6 +77,7 @@ The site is hosted on Bluehost. `./deploy.sh` uploads it over SFTP. Links must s
   <meta name="recipe-cuisine" content="{cuisine}">
   <meta name="recipe-type" content="{type}">
   <meta name="recipe-main-ingredient" content="{main_ingredient}">
+  <meta name="recipe-course" content="{course}">
   <title>{recipe_name}</title>
   <style>
     /* Palette from kevinrocci.com/work (yellow-billed magpie).
